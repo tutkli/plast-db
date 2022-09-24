@@ -7,7 +7,22 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "scss"
+          "prefix": "plast",
+          "style": "scss",
+          "standalone": true,
+          "changeDetection": "OnPush",
+          "flat": false
+        },
+        "@schematics/angular:directive": {
+          "prefix": "plast",
+          "standalone": true,
+          "flat": false,
+          "path": "src/app/shared/directives"
+        },
+        "@schematics/angular:pipe": {
+          "standalone": true,
+          "flat": false,
+          "path": "src/app/shared/pipes"
         }
       },
       "root": "",
@@ -28,7 +43,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles/styles.scss"
             ],
             "scripts": []
           },
@@ -96,7 +111,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles/styles.scss"
             ],
             "scripts": []
           }
