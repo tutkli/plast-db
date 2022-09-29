@@ -10,6 +10,6 @@ export enum AnimeRouteName {
 
 export const ANIME_ROUTES: Routes = [
   { path: '', redirectTo: AnimeRouteName.LIST, pathMatch: 'full' },
-  { path: AnimeRouteName.LIST, component: AnimeListComponent },
-  { path: AnimeRouteName.DETAIL, component: AnimeDetailComponent },
+  { path: AnimeRouteName.LIST, component: AnimeListComponent, title: 'PLAST DB | List' },
+  { path: AnimeRouteName.DETAIL, component: AnimeDetailComponent, title: 'PLAST DB | Detail' },
 ];

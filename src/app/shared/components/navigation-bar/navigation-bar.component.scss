@@ -1,0 +1,43 @@
+:host {
+  --navigation-bar-background-color: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100vw;
+}
+:host(.dark) {
+  --navigation-bar-background-color: black;
+}
+
+mat-toolbar {
+  background-color: var(--navigation-bar-background-color);
+  color: white;
+  padding: 1.5em;
+  transition: background-color 100ms ease;
+}
+a {
+  text-decoration: none;
+}
+a, a:visited, a:hover, a:active {
+  color: inherit;
+}
+.title {
+  color: white;
+  font-weight: 700;
+  font-size: 2em;
+}
+
+.navigation-items {
+  p {
+    margin: 0;
+  }
+}
+input {
+  background-color: #fff;
+  opacity: .8;
+  border: 1px solid #eee;
+  padding: 1rem;
+  font-size: 1rem;
+  border-radius: 0.35rem;
+}

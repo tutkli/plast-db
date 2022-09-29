@@ -1,19 +1,20 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FlexModule } from '@angular/flex-layout';
+import { MatButtonModule } from '@angular/material/button';
+import { TopAnimesComponent } from '../shared/components/top-animes/top-animes.component';
+import { AnimeGenresComponent } from '../shared/components/anime-genres/anime-genres.component';
 
 @Component({
   selector: 'plast-home',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FlexModule, MatButtonModule, TopAnimesComponent, AnimeGenresComponent],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomeComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

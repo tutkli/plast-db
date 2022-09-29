@@ -1,0 +1,8 @@
+.anime-gallery {
+  width: 100%;
+  display: grid;
+  gap: 1rem;
+  grid-auto-rows: 18rem;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+}
+

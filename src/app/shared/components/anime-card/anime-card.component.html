@@ -1,0 +1,16 @@
+<div class="card-container mat-elevation-z2"
+     fxLayout="row" fxLayoutAlign="start start">
+  <img [src]="anime.images.webp.image_url" width="50%x" height="250px" alt="Anime front image">
+
+  <div class="card-info" fxLayout="column" fxLayoutAlign="center start">
+    <div fxLayout="row wrap" fxLayoutAlign="start center" fxLayoutGap="2px">
+      <p class="anime-genre" *ngFor="let genre of (anime.genres | maxItems: 2) ">{{ genre.name }}</p>
+    </div>
+    <p class="anime-title">{{ anime.title }}</p>
+    <div class="anime-score" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap=".5rem">
+      <mat-icon>star_half</mat-icon>
+      <p>{{ anime.score }}</p>
+    </div>
+
+  </div>
+</div>

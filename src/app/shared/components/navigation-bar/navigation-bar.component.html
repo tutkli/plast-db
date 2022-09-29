@@ -1,0 +1,20 @@
+<nav>
+  <mat-toolbar>
+    <mat-toolbar-row fxLayout="row" fxLayoutAlign="space-between center">
+      <p class="title" >
+        <a routerLink="/home" routerLinkActive="light">PLAST DB</a>
+      </p>
+
+      <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="2em"
+           class="navigation-items">
+        <p>
+          <a>Recommendations</a>
+        </p>
+        <p>
+          <a routerLink="/anime/list">Browse</a>
+        </p>
+        <input #searchInput type="text" placeholder="Search Anime">
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</nav>

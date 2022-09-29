@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 import { AnimeRouteName } from './anime-routes.const';
 
-enum AppRouteName {
+export enum AppRouteName {
   HOME = 'home',
 }
 
@@ -14,6 +14,7 @@ export const APP_ROUTES: Routes = [
   {
     path: AppRouteName.HOME,
     loadComponent: () => import('src/app/home/home.component').then((mod) => mod.HomeComponent),
+    title: 'PLAST DB | Home',
   },
   {
     path: AnimeRouteName.ANIME,

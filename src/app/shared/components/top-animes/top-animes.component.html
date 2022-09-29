@@ -1,0 +1,11 @@
+<div fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="2rem">
+  <div class="section-title" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="1rem">
+    <h1>Top Animes</h1>
+    <div class="section-title-divider"></div>
+  </div>
+
+  <div class="anime-gallery">
+    <plast-anime-card  *ngFor="let anime of (topAnimes$ | async) | maxItems: 5" [anime]="anime"></plast-anime-card>
+  </div>
+</div>
+
