@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { JikanService } from '../../../core/services/jikan/jikan.service';
+import { JikanService } from '@services/jikan/jikan.service';
 import { Observable } from 'rxjs';
 import { Genre } from '../../../core/models/genre/genre.model';
 import { GenreCardComponent } from '../genre-card/genre-card.component';

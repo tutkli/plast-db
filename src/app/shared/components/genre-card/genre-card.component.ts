@@ -16,8 +16,6 @@ export class GenreCardComponent implements OnInit {
   @Input() genre!: Genre;
   backgroundColor!: string;
 
-  constructor() {}
-
   ngOnInit(): void {
     // this.generateBackgroundColor();
   }

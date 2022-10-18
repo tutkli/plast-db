@@ -2,10 +2,10 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Observable } from 'rxjs';
 import { Anime } from '../../../core/models/anime/anime.model';
-import { JikanService } from '../../../core/services/jikan/jikan.service';
+import { JikanService } from '@services/jikan/jikan.service';
 import { FlexModule } from '@angular/flex-layout';
 import { AnimeCardComponent } from '../anime-card/anime-card.component';
-import { MaxItemsPipe } from '../../pipes/max-items/max-items.pipe';
+import { MaxItemsPipe } from '@pipes/max-items/max-items.pipe';
 
 @Component({
   selector: 'plast-top-animes',

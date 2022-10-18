@@ -3,6 +3,13 @@
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "./",
+    "paths": {
+      "@shared-components/*": ["./src/app/shared/components/*"],
+      "@pipes/*": ["./src/app/shared/pipes/*"],
+      "@directives/*": ["./src/app/shared/directives/*"],
+      "@services/*": ["./src/app/core/services/*"],
+      "@mappers/*": ["./src/app/core/mappers/*"],
+    },
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strict": true,

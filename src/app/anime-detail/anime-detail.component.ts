@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -9,8 +9,4 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./anime-detail.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AnimeDetailComponent implements OnInit {
-  constructor() {}
-
-  ngOnInit(): void {}
-}
+export class AnimeDetailComponent {}

@@ -2,7 +2,7 @@ import { JikanData, JikanResponse } from '../models/jikan/jikan.model';
 import { Anime } from '../models/anime/anime.model';
 import { Genre } from '../models/genre/genre.model';
 
-export class JikanDeserializer {
+export class JikanMapper {
   static deserializeAnimes = (input: JikanResponse): Anime[] => {
     return input.data.map((animeData: JikanData): Anime => animeData as unknown as Anime);
   };
