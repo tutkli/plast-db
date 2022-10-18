@@ -8,9 +8,8 @@ describe('AnimeGenresComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ AnimeGenresComponent ]
-    })
-    .compileComponents();
+      imports: [AnimeGenresComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(AnimeGenresComponent);
     component = fixture.componentInstance;

@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { FlexModule } from '@angular/flex-layout';
@@ -12,8 +12,4 @@ import { RouterLink, RouterLinkActive, RouterLinkWithHref } from '@angular/route
   styleUrls: ['./navigation-bar.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class NavigationBarComponent implements OnInit {
-  constructor() {}
-
-  ngOnInit(): void {}
-}
+export class NavigationBarComponent {}

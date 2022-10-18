@@ -8,9 +8,7 @@ import { AppRouteName } from '../../../core/const/routes.const';
 })
 export class IsHomeActivePipe implements PipeTransform {
   transform(value: NavigationStart | null): boolean {
-    if (value === null) {
-      return false;
-    }
+    if (value === null) return false;
     return value.url.includes(`/${AppRouteName.HOME}`);
   }
 }
