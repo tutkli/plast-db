@@ -3,6 +3,7 @@ import { AnimeRouteName } from './anime-routes.const';
 
 export enum AppRouteName {
   HOME = 'home',
+  ABOUT = 'about',
 }
 
 export const APP_ROUTES: Routes = [
@@ -15,6 +16,11 @@ export const APP_ROUTES: Routes = [
     path: AppRouteName.HOME,
     loadComponent: () => import('src/app/home/home.component').then((mod) => mod.HomeComponent),
     title: 'PLAST DB | Home',
+  },
+  {
+    path: AppRouteName.ABOUT,
+    loadComponent: () => import('src/app/about/about.component').then((mod) => mod.AboutComponent),
+    title: 'PLAST DB | About',
   },
   {
     path: AnimeRouteName.ANIME,

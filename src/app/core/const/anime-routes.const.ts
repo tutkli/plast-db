@@ -1,6 +1,4 @@
 import { Routes } from '@angular/router';
-import { AnimeListComponent } from '../../anime-list/anime-list.component';
-import { AnimeDetailComponent } from '../../anime-detail/anime-detail.component';
 
 export enum AnimeRouteName {
   ANIME = 'anime',
@@ -10,6 +8,14 @@ export enum AnimeRouteName {
 
 export const ANIME_ROUTES: Routes = [
   { path: '', redirectTo: AnimeRouteName.LIST, pathMatch: 'full' },
-  { path: AnimeRouteName.LIST, component: AnimeListComponent, title: 'PLAST DB | List' },
-  { path: AnimeRouteName.DETAIL, component: AnimeDetailComponent, title: 'PLAST DB | Detail' },
+  {
+    path: AnimeRouteName.LIST,
+    loadComponent: () => import('src/app/anime-list/anime-list.component').then((mod) => mod.AnimeListComponent),
+    title: 'PLAST DB | List',
+  },
+  {
+    path: AnimeRouteName.DETAIL,
+    loadComponent: () => import('src/app/anime-detail/anime-detail.component').then((mod) => mod.AnimeDetailComponent),
+    title: 'PLAST DB | Detail',
+  },
 ];
