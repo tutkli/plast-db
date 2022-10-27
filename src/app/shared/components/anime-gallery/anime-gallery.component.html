@@ -1,0 +1,10 @@
+<div *ngIf="(topAnimes$ | async)?.length; else placeholderAnimesTemplate"
+     class="anime-gallery">
+  <plast-anime-card *ngFor="let anime of (topAnimes$ | async) | maxItems: maxItems" [anime]="anime"></plast-anime-card>
+</div>
+
+<ng-template #placeholderAnimesTemplate>
+  <div class="anime-gallery">
+    <plast-anime-card *ngFor="let anime of placeHolderAnimes"></plast-anime-card>
+  </div>
+</ng-template>

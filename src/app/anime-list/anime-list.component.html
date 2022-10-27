@@ -1,5 +1,3 @@
 <section class="anime-list-section">
-  <div class="anime-list" *ngIf="(topAnimes$ | async)?.length">
-    <plast-anime-card *ngFor="let anime of (topAnimes$ | async)" [anime]="anime"></plast-anime-card>
-  </div>
+  <plast-anime-gallery></plast-anime-gallery>
 </section>

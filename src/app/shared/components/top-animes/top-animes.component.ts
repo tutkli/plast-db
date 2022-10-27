@@ -3,13 +3,12 @@ import { CommonModule } from '@angular/common';
 import { Observable } from 'rxjs';
 import { Anime } from '../../../core/models/anime/anime.model';
 import { JikanService } from '@services/jikan/jikan.service';
-import { AnimeCardComponent } from '../anime-card/anime-card.component';
-import { MaxItemsPipe } from '@pipes/max-items/max-items.pipe';
+import { AnimeGalleryComponent } from '@shared-components/anime-gallery/anime-gallery.component';
 
 @Component({
   selector: 'plast-top-animes',
   standalone: true,
-  imports: [CommonModule, AnimeCardComponent, MaxItemsPipe],
+  imports: [CommonModule, AnimeGalleryComponent],
   templateUrl: './top-animes.component.html',
   styleUrls: ['./top-animes.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,

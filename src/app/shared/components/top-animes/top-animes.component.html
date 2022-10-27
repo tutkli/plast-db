@@ -4,14 +4,6 @@
     <div class="section-title__divider"></div>
   </div>
 
-  <div class="anime-gallery" *ngIf="(topAnimes$ | async)?.length; else placeholderAnimesTemplate">
-    <plast-anime-card *ngFor="let anime of (topAnimes$ | async) | maxItems: 5" [anime]="anime"></plast-anime-card>
-  </div>
+  <plast-anime-gallery [maxItems]="5"></plast-anime-gallery>
 </section>
-
-<ng-template #placeholderAnimesTemplate>
-  <div class="anime-gallery">
-    <plast-anime-card *ngFor="let anime of placeHolderAnimes"></plast-anime-card>
-  </div>
-</ng-template>
 
