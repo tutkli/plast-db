@@ -24,20 +24,11 @@ $plast-db-theme: mat.define-light-theme((
 html, body { height: 100%; }
 body { margin: 0; font-family: Poppins, "Helvetica Neue", sans-serif; background-color: #f1f1f1; overflow-x: hidden }
 
-::-webkit-scrollbar {
-  width: 10px;
+a {
+  text-decoration: none;
 }
-
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #888;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
+a, a:visited, a:hover, a:active {
+  color: inherit;
 }
 
 .section-title {
@@ -53,4 +44,20 @@ body { margin: 0; font-family: Poppins, "Helvetica Neue", sans-serif; background
     background-color: #999999;
     border-radius: 2px;
   }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }

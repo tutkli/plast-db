@@ -13,6 +13,10 @@
           "changeDetection": "OnPush",
           "flat": false
         },
+        "@schematics/angular:service": {
+          "path": "src/app/core/services",
+          "flat": false
+        },
         "@schematics/angular:directive": {
           "prefix": "plast",
           "standalone": true,
