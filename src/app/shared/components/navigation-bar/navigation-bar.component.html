@@ -26,11 +26,13 @@
 
 <ng-template #smallBreakpointTemplate>
   <div class="navigation-items navigation-items--small">
-    <button mat-icon-button aria-label="Menu Button" matTooltip="Menu" (click)="toggleDropdownMenu('menu'); $event.stopPropagation()">
+    <button mat-icon-button aria-label="Menu Button" matTooltip="Menu"
+            (click)="toggleDropdownMenu('menu'); $event.stopPropagation()">
       <mat-icon>menu</mat-icon>
     </button>
 
-    <button class="search-button" mat-icon-button aria-label="Search Button" matTooltip="Search" (click)="toggleDropdownMenu('search'); $event.stopPropagation()">
+    <button class="search-button" mat-icon-button aria-label="Search Button" matTooltip="Search"
+            (click)="toggleDropdownMenu('search'); $event.stopPropagation()">
       <mat-icon>search</mat-icon>
     </button>
   </div>

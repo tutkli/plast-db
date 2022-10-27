@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { RouterLink, RouterLinkWithHref } from '@angular/router';
+import { RouterLinkWithHref } from '@angular/router';
 import { BreakpointObserverService } from '@services/breakpoint-observer/breakpoint-observer.service';
 import { BehaviorSubject, Observable, share } from 'rxjs';
 import { MatIconModule } from '@angular/material/icon';
@@ -18,7 +18,6 @@ type DropdownMenu = 'menu' | 'search' | undefined;
   imports: [
     CommonModule,
     MatToolbarModule,
-    RouterLink,
     RouterLinkWithHref,
     MatIconModule,
     MatButtonModule,
