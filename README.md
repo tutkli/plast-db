@@ -5,6 +5,8 @@ Browse the current most popular anime with a simple interface.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.7.
 
+### **Check project at https://tutkli.github.io/plast-db/**
+
 <p>
   <img src="src/assets/images/plast-db.png" alt="PLAST DB Hero page">
 </p>

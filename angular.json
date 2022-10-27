@@ -105,6 +105,9 @@
           "options": {
             "browserTarget": "plast-db:build"
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy"
         }
       }
     }

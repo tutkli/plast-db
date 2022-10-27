@@ -27,6 +27,7 @@
     "@angular/cli": "14.2.7",
     "@angular/compiler-cli": "14.2.8",
     "@typescript-eslint/eslint-plugin": "5.41.0",
+    "angular-cli-ghpages": "^1.0.3",
     "eslint": "^8.26.0",
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-angular": "4.1.0",
