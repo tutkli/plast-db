@@ -31,14 +31,27 @@ a, a:visited, a:hover, a:active {
   color: inherit;
 }
 
+section {
+  width: 100vw;
+  padding: 5% 10%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+
 .section-title {
   width: 100%;
   box-sizing: border-box;
-  h1 {
+  display: flex;
+  flex-flow: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  .section-title__h2 {
     font-size: 2rem;
     font-weight: 500;
   }
-  .section-title-divider {
+  .section-title__divider {
     height: 5px;
     width: 100%;
     background-color: #999999;

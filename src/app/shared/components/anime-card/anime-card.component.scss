@@ -1,31 +1,67 @@
-.card-container {
-  height: 250px;
-  border-radius: 5px;
+@import "../../../../styles/keyframes";
+
+.card {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  gap: .5rem;
+  width: 240px;
+  transition: 400ms;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.05);
+  }
+  .card__image {
+    height: 250px;
+    width: 175px;
+    border-radius: 5px;
+    box-shadow: 0 3px 2px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0px rgba(0, 0, 0, 0.14), 0 1px 5px 0px rgba(0, 0, 0, 0.12);
+  }
+  .card__data {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    .anime__title {
+      font-weight: 500;
+    }
+    .anime__genres {
+      display: flex;
+      flex-flow: row;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+    }
+    .anime__genre {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+    }
+    .anime__title {
+      font-weight: 500;
+      text-transform: uppercase;
+    }
+    p {
+      text-align: center;
+    }
+  }
 }
 
-img {
-  height: 250px;
-  width: auto;
-  border-radius: inherit;
-}
-
-.card-info {
-  padding: 5%;
-  height: 100%;
-}
-
-.anime-genre {
-  font-size: 0.65rem;
-  text-transform: uppercase;
-}
-
-.anime-title {
-  font-weight: 500;
-}
-
-.anime-score {
-  font-size: 1.5rem;
-  font-weight: 500;
-  mat-icon { color: #ebba34 }
-  p { margin: 0 }
+.card-placeholder {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 240px;
+  .card-placeholder__image {
+    height: 250px;
+    width: 175px;
+    border-radius: 5px;
+    @include pulse;
+  }
+  .card-placeholder__text {
+    height: 20px;
+    width: 200px;
+    @include pulse;
+  }
 }

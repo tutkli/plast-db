@@ -1,4 +1,4 @@
-.background {
+.home-background {
   display: flex;
   min-height: 100vh;
   width: 100vw;
@@ -22,12 +22,12 @@
   padding: 5%;
   box-sizing: border-box;
   text-align: center;
-  .title {
+  .home-header__title {
     font-weight: 700;
     font-size: 5em;
     line-height: 1em;
   }
-  .intro {
+  .home-header__text {
     font-size: 2em;
     line-height: 1.2em;
   }
@@ -35,11 +35,4 @@
     opacity: 1;
     width: 10rem;
   }
-}
-
-section {
-  width: 100vw;
-  padding: 5% 10%;
-  box-sizing: border-box;
-  overflow: hidden;
 }

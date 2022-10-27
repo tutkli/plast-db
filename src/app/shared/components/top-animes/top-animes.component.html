@@ -1,11 +1,17 @@
-<div fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="2rem">
-  <div class="section-title" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="1rem">
-    <h1>Top Animes</h1>
-    <div class="section-title-divider"></div>
+<section class="top-animes-section">
+  <div class="section-title">
+    <h2 class="section-title__h2">Top Animes</h2>
+    <div class="section-title__divider"></div>
   </div>
 
-  <div class="anime-gallery">
-    <plast-anime-card  *ngFor="let anime of (topAnimes$ | async) | maxItems: 5" [anime]="anime"></plast-anime-card>
+  <div class="anime-gallery" *ngIf="(topAnimes$ | async)?.length; else placeholderAnimesTemplate">
+    <plast-anime-card *ngFor="let anime of (topAnimes$ | async) | maxItems: 5" [anime]="anime"></plast-anime-card>
   </div>
-</div>
+</section>
+
+<ng-template #placeholderAnimesTemplate>
+  <div class="anime-gallery">
+    <plast-anime-card *ngFor="let anime of placeHolderAnimes"></plast-anime-card>
+  </div>
+</ng-template>
 
