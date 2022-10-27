@@ -1,4 +1,4 @@
-interface Anime {
+export interface Anime {
   mal_id: string;
   url: string;
   images: AnimeImages;
@@ -25,41 +25,41 @@ interface Anime {
   favorites: number;
   synopsis: string;
   background: string;
-  season: 'spring' | 'summer' | 'fall' | 'winter';
+  season: AnimeSeason;
   year: number;
   broadcast: AnimeBroadcast;
-  producers: AnimeProducer[];
-  licensors: AnimeLicensor[];
-  studio: AnimeStudio[];
-  genres: AnimeGenre[];
-  explicit_genres: AnimeGenre[];
-  themes: AnimeTheme[];
-  demographic: AnimeDemographic[];
+  producers: AnimeDataField[];
+  licensors: AnimeDataField[];
+  studio: AnimeDataField[];
+  genres: AnimeDataField[];
+  explicit_genres: AnimeDataField[];
+  themes: AnimeDataField[];
+  demographic: AnimeDataField[];
 }
 
-interface AnimeImages {
+export interface AnimeImages {
   jpg: AnimeImageCollection;
   webp: AnimeImageCollection;
 }
 
-interface AnimeImageCollection {
+export interface AnimeImageCollection {
   image_url: string;
   small_image_url: string;
   large_image_url: string;
 }
 
-interface AnimeTrailer {
+export interface AnimeTrailer {
   youtube_id: string;
   url: string;
   embed_url: string;
 }
 
-interface AnimeTitle {
+export interface AnimeTitle {
   type: string;
   title: string;
 }
 
-interface AnimeAired {
+export interface AnimeAired {
   from: string;
   to: string;
   prop: {
@@ -69,67 +69,39 @@ interface AnimeAired {
   };
 }
 
-interface AnimeBroadcast {
+export enum AnimeSeason {
+  SPRING = 'spring',
+  SUMMER = 'summer',
+  FALL = 'fall',
+  WINTER = 'winter',
+}
+
+export interface AnimeBroadcast {
   day: string;
   time: string;
   timezone: string;
   string: string;
 }
 
-interface AnimeProducer {
+export interface AnimeDataField {
   mal_id: number;
   type: string;
   name: string;
   url: string;
 }
 
-interface AnimeLicensor {
-  mal_id: number;
-  type: string;
-  name: string;
-  url: string;
+export enum AnimeFilter {
+  AIRING = 'airing',
+  UPCOMING = 'upcoming',
+  BY_POPULARITY = 'bypopularity',
+  FAVORITE = 'favorite',
 }
 
-interface AnimeStudio {
-  mal_id: number;
-  type: string;
-  name: string;
-  url: string;
+export enum AnimeType {
+  TV = 'tv',
+  MOVIE = 'movie',
+  OVA = 'ova',
+  SPECIAL = 'special',
+  ONA = 'ona',
+  MUSIC = 'music',
 }
-
-interface AnimeGenre {
-  mal_id: number;
-  type: string;
-  name: string;
-  url: string;
-}
-
-interface AnimeTheme {
-  mal_id: number;
-  type: string;
-  name: string;
-  url: string;
-}
-
-interface AnimeDemographic {
-  mal_id: number;
-  type: string;
-  name: string;
-  url: string;
-}
-
-export {
-  Anime,
-  AnimeImages,
-  AnimeImageCollection,
-  AnimeTrailer,
-  AnimeTitle,
-  AnimeAired,
-  AnimeBroadcast,
-  AnimeProducer,
-  AnimeLicensor,
-  AnimeStudio,
-  AnimeGenre,
-  AnimeTheme,
-  AnimeDemographic,
-};

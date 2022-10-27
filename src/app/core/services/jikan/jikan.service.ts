@@ -3,7 +3,7 @@ import { map, Observable } from 'rxjs';
 import { Anime } from '../../models/anime/anime.model';
 import { HttpService } from '../http/http.service';
 import { JikanMapper } from '@mappers/jikan-mapper';
-import { Genre } from '../../models/genre/genre.model';
+import { Pairs } from '../../models/http/http.model';
 
 @Injectable({
   providedIn: 'root',
@@ -13,15 +13,9 @@ export class JikanService {
 
   constructor(private httpService: HttpService) {}
 
-  getTopAnimes(): Observable<Anime[]> {
+  getTopAnimes(params: Pairs = { filter: 'airing' }): Observable<Anime[]> {
     return this.httpService
-      .serverRequest('GET', `${this.JIKAN_API}/top/anime`, {})
+      .serverRequest('GET', `${this.JIKAN_API}/top/anime`, { params })
       .pipe(map(JikanMapper.deserializeAnimes));
-  }
-
-  getAnimeGenres(): Observable<Genre[]> {
-    return this.httpService
-      .serverRequest('GET', `${this.JIKAN_API}/genres/anime`, {})
-      .pipe(map(JikanMapper.deserializeGenres));
   }
 }

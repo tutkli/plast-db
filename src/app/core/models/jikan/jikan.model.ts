@@ -1,23 +1,21 @@
-interface JikanResponse {
+export interface JikanResponse {
   data: JikanData[];
   pagination?: JikanPagination;
 }
 
-interface JikanData {
-  [key: string]: any;
+export interface JikanData {
+  [key: string]: unknown;
   mal_id: number;
 }
 
-interface JikanPagination {
+export interface JikanPagination {
   last_visible_page: number;
   has_next_page: boolean;
   items: JikanPaginationItems;
 }
 
-interface JikanPaginationItems {
+export interface JikanPaginationItems {
   count: number;
   total: number;
   per_page: number;
 }
-
-export { JikanResponse, JikanData, JikanPagination, JikanPaginationItems };
