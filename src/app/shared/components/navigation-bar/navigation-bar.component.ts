@@ -6,7 +6,6 @@ import { BreakpointObserverService } from '@services/breakpoint-observer/breakpo
 import { BehaviorSubject, Observable, share } from 'rxjs';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-import { MatTooltipModule } from '@angular/material/tooltip';
 import { fadeInOnEnter } from '../../../../styles/animations';
 import { ClickOutsideDirective } from '@directives/click-outside/click-outside.directive';
 
@@ -15,15 +14,7 @@ type DropdownMenu = 'menu' | 'search' | undefined;
 @Component({
   selector: 'plast-navigation-bar',
   standalone: true,
-  imports: [
-    CommonModule,
-    MatToolbarModule,
-    RouterLinkWithHref,
-    MatIconModule,
-    MatButtonModule,
-    MatTooltipModule,
-    ClickOutsideDirective,
-  ],
+  imports: [CommonModule, MatToolbarModule, RouterLinkWithHref, MatIconModule, MatButtonModule, ClickOutsideDirective],
   templateUrl: './navigation-bar.component.html',
   styleUrls: ['./navigation-bar.component.scss'],
   animations: [fadeInOnEnter],
