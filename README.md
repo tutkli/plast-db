@@ -1,27 +1,34 @@
-# PlastDb
+# PLAST DB
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.1.
+This is a remake of my first ever Angular Project [Plast-Manga-DB](https://github.com/tutkli/Plast-Manga-DB).
+Browse the current most popular anime with a simple interface.
 
-## Development server
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.7.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+<p>
+  <img src="src/assets/images/plast-db.png" alt="PLAST DB Hero page">
+</p>
 
-## Code scaffolding
+## Dependencies
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+* [Jikan API](https://jikan.moe/) Open Source anime REST API
+* [Angular Material](https://material.angular.io/) Official Angular UI component library
 
-## Build
+## Available Scripts
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### `start`
 
-## Running unit tests
+Runs the app in development mode.
+Open http://localhost:4200 to view it in the browser.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### `eslint:lint`
 
-## Running end-to-end tests
+Lints the entire project with ESLint and Prettier configuration.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### `analyze-bundle`
 
-## Further help
+Analyzes the bundle size of the project with `webpack-bundle-analyzer`.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Important Notes
+
+The Jikan API is limited to 3 request per second and 60 per minute. If you don't see any data, wait a little and refresh the page.
