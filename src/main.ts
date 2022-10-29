@@ -4,7 +4,7 @@ import { bootstrapApplication, BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app/app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
-import { RouterModule } from '@angular/router';
+import { provideRouter, withInMemoryScrolling } from '@angular/router';
 import { APP_ROUTES } from './app/core/const/routes.const';
 import { InitService } from '@services/init/init.service';
 
@@ -23,7 +23,7 @@ bootstrapApplication(AppComponent, {
     importProvidersFrom(BrowserModule),
     importProvidersFrom(BrowserAnimationsModule),
     importProvidersFrom(HttpClientModule),
-    importProvidersFrom(RouterModule.forRoot(APP_ROUTES, { scrollPositionRestoration: 'enabled' })),
+    provideRouter(APP_ROUTES, withInMemoryScrolling({ scrollPositionRestoration: 'enabled' })),
     InitService,
     {
       provide: APP_INITIALIZER,
