@@ -1,5 +1,7 @@
 import { Routes } from '@angular/router';
-import { AnimeRouteName } from './anime-routes.const';
+import { ANIME_ROUTES, AnimeRouteName } from './anime-routes.const';
+import { HomeComponent } from '../../home/home.component';
+import { AboutComponent } from '../../about/about.component';
 
 export enum AppRouteName {
   HOME = 'home',
@@ -14,16 +16,16 @@ export const APP_ROUTES: Routes = [
   },
   {
     path: AppRouteName.HOME,
-    loadComponent: () => import('src/app/home/home.component').then((mod) => mod.HomeComponent),
+    component: HomeComponent,
     title: 'PLAST DB | Home',
   },
   {
     path: AppRouteName.ABOUT,
-    loadComponent: () => import('src/app/about/about.component').then((mod) => mod.AboutComponent),
+    component: AboutComponent,
     title: 'PLAST DB | About',
   },
   {
     path: AnimeRouteName.ANIME,
-    loadChildren: () => import('src/app/core/const/anime-routes.const').then((mod) => mod.ANIME_ROUTES),
+    children: ANIME_ROUTES,
   },
 ];
