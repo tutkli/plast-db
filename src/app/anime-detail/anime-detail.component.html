@@ -1,12 +1,15 @@
 <section *ngIf="(anime$ | async) as anime" class="anime-detail__section">
-  <header class="anime-detail__header">
+  <header class="anime-detail__header"
+          [ngClass]="{'anime-detail__header--big': !(smallBreakpoint$ | async), 'anime-detail__header--small': (smallBreakpoint$ | async)}">
             <p class="anime-detail__header--english">{{ anime.title }}</p>
             <p class="anime-detail__header--japanese">{{ anime.title_japanese }}</p>
   </header>
-  <div class="anime-detail__data">
+  <div class="anime-detail__data" [ngClass]="{'anime-detail__data--big': !(smallBreakpoint$ | async), 'anime-detail__data--small': (smallBreakpoint$ | async)}">
     <aside class="anime-detail__aside">
       <img [src]="anime.images?.webp?.large_image_url"
            [alt]="anime.title + ' front cover'"
+           class="anime-detail__image"
+           [ngClass]="{'anime-detail__image--big': !(smallBreakpoint$ | async), 'anime-detail__image--small': (smallBreakpoint$ | async)}"
            width="350" height="500">
 
       <div class="anime-detail__status"
@@ -37,7 +40,6 @@
               width="225" height="350">
         <p>{{ character.character.name }}</p>
       </div>
-
     </ng-container>
   </div>
 </section>

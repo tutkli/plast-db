@@ -5,6 +5,8 @@ import { first, Observable, switchMap } from 'rxjs';
 import { JikanService } from '@services/jikan/jikan.service';
 import { Anime } from '../core/models/anime/anime.model';
 import { AnimeCharacter } from '../core/models/character.model';
+import { BreakpointObserverService } from '@services/breakpoint-observer/breakpoint-observer.service';
+import { Breakpoints } from '@angular/cdk/layout';
 
 @Component({
   selector: 'plast-anime-detail',
@@ -18,7 +20,19 @@ export class AnimeDetailComponent implements OnInit {
   anime$!: Observable<Anime>;
   animeCharacters$!: Observable<AnimeCharacter[]>;
 
-  constructor(private router: ActivatedRoute, private jikanService: JikanService) {}
+  get smallBreakpoint$(): Observable<boolean> {
+    return this.breakpointObserverService.observe([
+      Breakpoints.TabletPortrait,
+      Breakpoints.HandsetPortrait,
+      Breakpoints.WebPortrait,
+    ]);
+  }
+
+  constructor(
+    private router: ActivatedRoute,
+    private jikanService: JikanService,
+    private breakpointObserverService: BreakpointObserverService
+  ) {}
 
   ngOnInit(): void {
     this.anime$ = this.router.url.pipe(
