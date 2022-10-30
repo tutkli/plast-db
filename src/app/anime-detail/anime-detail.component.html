@@ -1,1 +1,43 @@
-<p>anime-detail works!</p>
+<section *ngIf="(anime$ | async) as anime" class="anime-detail__section">
+  <header class="anime-detail__header">
+            <p class="anime-detail__header--english">{{ anime.title }}</p>
+            <p class="anime-detail__header--japanese">{{ anime.title_japanese }}</p>
+  </header>
+  <div class="anime-detail__data">
+    <aside class="anime-detail__aside">
+      <img [src]="anime.images?.webp?.large_image_url"
+           [alt]="anime.title + ' front cover'"
+           width="350" height="500">
+
+      <div class="anime-detail__status"
+           [ngClass]="{'anime-detail__status--airing': anime.airing, 'anime-detail__status--finished': !anime.airing}">
+        {{ anime.status }}
+      </div>
+    </aside>
+
+    <article class="anime-detail__synopsis">
+      <div class="section-title">
+        <h2 class="section-title__h2">Synopsis</h2>
+        <div class="section-title__divider"></div>
+      </div>
+
+      <p>{{ anime.synopsis }}</p>
+    </article>
+  </div>
+
+  <div class="anime-detail__characters">
+    <div class="section-title">
+      <h2 class="section-title__h2">Main characters</h2>
+      <div class="section-title__divider"></div>
+    </div>
+
+    <ng-container *ngFor="let character of (animeCharacters$ | async)">
+      <div *ngIf="character.role === 'Main'" class="anime-detail__character-card">
+        <img  [src]="character.character.images?.webp?.image_url" [alt]="character.character.name + ' portrait'"
+              width="225" height="350">
+        <p>{{ character.character.name }}</p>
+      </div>
+
+    </ng-container>
+  </div>
+</section>

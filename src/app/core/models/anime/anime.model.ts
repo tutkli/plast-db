@@ -39,13 +39,13 @@ export interface Anime {
 
 export interface AnimeImages {
   jpg: AnimeImageCollection;
-  webp: AnimeImageCollection;
+  webp?: AnimeImageCollection;
 }
 
 export interface AnimeImageCollection {
   image_url: string;
-  small_image_url: string;
-  large_image_url: string;
+  small_image_url?: string;
+  large_image_url?: string;
 }
 
 export interface AnimeTrailer {
