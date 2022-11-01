@@ -52,7 +52,8 @@
   <nav class="dropdown-menu" @fadeInOnEnter (plastClickOutside)="toggleDropdownMenu(undefined)"
        aria-label="Dropdown menu with a search bar">
     <div class="dropdown-menu__navigation-items">
-      <input #dropdownSearchInput type="text" placeholder="Search Anime" (keydown.enter)="searchAnime(dropdownSearchInput)">
+      <input #dropdownSearchInput [autofocus]="true" type="text" placeholder="Search Anime"
+             (keydown.enter)="searchAnime(dropdownSearchInput)">
     </div>
   </nav>
 </ng-template>
