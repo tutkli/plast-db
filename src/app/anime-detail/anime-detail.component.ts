@@ -29,13 +29,13 @@ export class AnimeDetailComponent implements OnInit {
   }
 
   constructor(
-    private router: ActivatedRoute,
+    private activatedRoute: ActivatedRoute,
     private jikanService: JikanService,
     private breakpointObserverService: BreakpointObserverService
   ) {}
 
   ngOnInit(): void {
-    this.anime$ = this.router.url.pipe(
+    this.anime$ = this.activatedRoute.url.pipe(
       first(),
       switchMap((data: UrlSegment[]): Observable<Anime> => {
         const malId = parseInt(data[0]?.path, 10);
@@ -43,7 +43,7 @@ export class AnimeDetailComponent implements OnInit {
       })
     );
 
-    this.animeCharacters$ = this.router.url.pipe(
+    this.animeCharacters$ = this.activatedRoute.url.pipe(
       first(),
       switchMap((data: UrlSegment[]): Observable<AnimeCharacter[]> => {
         const malId = parseInt(data[0]?.path, 10);
