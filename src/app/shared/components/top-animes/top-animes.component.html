@@ -4,6 +4,6 @@
     <div class="section-title__divider"></div>
   </div>
 
-  <plast-anime-gallery [maxItems]="5"></plast-anime-gallery>
+  <plast-anime-gallery [animes]="topAnimes$ | async" [maxItems]="5"></plast-anime-gallery>
 </section>
 

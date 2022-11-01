@@ -14,9 +14,15 @@ export class JikanService {
 
   constructor(private httpService: HttpService) {}
 
-  getTopAnimes(params: Pairs = { filter: 'airing' }): Observable<Anime[]> {
+  getTopAnimes(): Observable<Anime[]> {
     return this.httpService
-      .serverRequest('GET', `${this.JIKAN_API}/top/anime`, { params })
+      .serverRequest('GET', `${this.JIKAN_API}/top/anime`, { params: { filter: 'airing' } })
+      .pipe(map(JikanMapper.deserializeAnimes));
+  }
+
+  getAnimeSearch(params: Pairs): Observable<Anime[]> {
+    return this.httpService
+      .serverRequest('GET', `${this.JIKAN_API}/anime`, { params })
       .pipe(map(JikanMapper.deserializeAnimes));
   }
 

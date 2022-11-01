@@ -6,7 +6,7 @@
   </header>
   <div class="anime-detail__data" [ngClass]="{'anime-detail__data--big': !(smallBreakpoint$ | async), 'anime-detail__data--small': (smallBreakpoint$ | async)}">
     <aside class="anime-detail__aside">
-      <img [src]="anime.images?.webp?.large_image_url"
+      <img [src]="anime.images.webp?.large_image_url"
            [alt]="anime.title + ' front cover'"
            class="anime-detail__image"
            [ngClass]="{'anime-detail__image--big': !(smallBreakpoint$ | async), 'anime-detail__image--small': (smallBreakpoint$ | async)}"
@@ -36,7 +36,7 @@
 
     <ng-container *ngFor="let character of (animeCharacters$ | async)">
       <div *ngIf="character.role === 'Main'" class="anime-detail__character-card">
-        <img  [src]="character.character.images?.webp?.image_url" [alt]="character.character.name + ' portrait'"
+        <img  [src]="character.character.images.webp?.image_url" [alt]="character.character.name + ' portrait'"
               width="225" height="350">
         <p>{{ character.character.name }}</p>
       </div>
