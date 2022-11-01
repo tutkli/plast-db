@@ -3,6 +3,9 @@
           [ngClass]="{'anime-detail__header--big': !(smallBreakpoint$ | async), 'anime-detail__header--small': (smallBreakpoint$ | async)}">
             <p class="anime-detail__header--english">{{ anime.title }}</p>
             <p class="anime-detail__header--japanese">{{ anime.title_japanese }}</p>
+            <div class="anime-detail__header__genres">
+              <p *ngFor="let genre of anime.genres" class="anime-detail__header__genre">{{ genre.name | uppercase }}</p>
+            </div>
   </header>
   <div class="anime-detail__data" [ngClass]="{'anime-detail__data--big': !(smallBreakpoint$ | async), 'anime-detail__data--small': (smallBreakpoint$ | async)}">
     <aside class="anime-detail__aside">

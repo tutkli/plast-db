@@ -35,6 +35,19 @@
     font-size: 0.8rem;
     opacity: .7;
   }
+  .anime-detail__header__genres {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+    .anime-detail__header__genre {
+      font-size: 0.8rem;
+      border: 2px solid white;
+      border-radius: 5px;
+      padding: 1px 15px;
+    }
+  }
 }
 
 .anime-detail__data {
