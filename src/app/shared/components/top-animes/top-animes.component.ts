@@ -15,7 +15,6 @@ import { AnimeGalleryComponent } from '@shared-components/anime-gallery/anime-ga
 })
 export class TopAnimesComponent implements OnInit {
   topAnimes$!: Observable<Anime[]>;
-  placeHolderAnimes: number[] = new Array(5);
 
   constructor(private jikanService: JikanService) {}
 

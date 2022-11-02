@@ -1,13 +1,14 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { RouterLinkWithHref } from '@angular/router';
+import { Router, RouterLinkWithHref } from '@angular/router';
 import { BreakpointObserverService } from '@services/breakpoint-observer/breakpoint-observer.service';
 import { BehaviorSubject, Observable, share } from 'rxjs';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { fadeInOnEnter } from '../../../../styles/animations';
 import { ClickOutsideDirective } from '@directives/click-outside/click-outside.directive';
+import { AnimeRouteName } from '../../../core/const/anime-routes.const';
 
 type DropdownMenu = 'menu' | 'search' | undefined;
 
@@ -28,14 +29,21 @@ export class NavigationBarComponent {
     return this.breakpointObserverService.smallBreakpoint$;
   }
 
-  constructor(private breakpointObserverService: BreakpointObserverService) {}
+  constructor(private breakpointObserverService: BreakpointObserverService, private router: Router) {}
 
   toggleDropdownMenu(value: DropdownMenu): void {
     this._dropdownMenu.next(value);
   }
 
   searchAnime(input: HTMLInputElement): void {
-    console.log(`Searching for ${input.value}`);
-    input.value = '';
+    this.router
+      .navigate([`${AnimeRouteName.ANIME}/${AnimeRouteName.LIST}`], {
+        queryParams: { q: input.value },
+        queryParamsHandling: 'merge',
+      })
+      .then((): void => {
+        this.toggleDropdownMenu(undefined);
+        input.value = '';
+      });
   }
 }

@@ -1,0 +1,139 @@
+.anime-detail__section {
+  padding: 0;
+  margin-top: 86px;
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  overflow: unset;
+  p {
+    font-size: 1rem;
+  }
+}
+.anime-detail__header {
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  height: 250px;
+  color: white;
+  background-color: black;
+  padding-left: calc(10% + 350px + 2%);
+  box-sizing: border-box;
+  &.anime-detail__header--big {
+    padding-left: calc(10% + 350px + 2%);
+  }
+  &.anime-detail__header--small {
+    padding-left: calc(10%);
+  }
+  .anime-detail__header--english {
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+  .anime-detail__header--japanese {
+    font-size: 0.8rem;
+    opacity: .7;
+  }
+  .anime-detail__header__genres {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+    .anime-detail__header__genre {
+      font-size: 0.8rem;
+      border: 2px solid white;
+      border-radius: 5px;
+      padding: 1px 15px;
+    }
+  }
+}
+
+.anime-detail__data {
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 5% 10%;
+  &.anime-detail__data--big {
+    flex-flow: row;
+  }
+  &.anime-detail__data--small {
+    flex-flow: column;
+  }
+}
+
+.anime-detail__aside {
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  .anime-detail__image {
+    height: 500px;
+    border-radius: 5px;
+    &.anime-detail__image--big {
+      width: 350px;
+      margin-top: -250px;
+    }
+    &.anime-detail__image--small {
+      width: 100%;
+      margin-top: 0;
+    }
+  }
+  .anime-detail__status {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    width: 100%;
+    padding: 10px 0;
+    border-radius: 5px;
+    font-weight: 500;
+    &.anime-detail__status--airing {
+      background-color: #35ac35;
+      border: 5px solid #6dc06d;
+    }
+    &.anime-detail__status--finished {
+      background-color: #c53030;
+      border: 5px solid #d85959;
+    }
+  }
+}
+
+.anime-detail__synopsis {
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.anime-detail__characters {
+  width: 100%;
+  padding: 5% 10%;
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.anime-detail__character-card {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  img {
+    border-radius: 5px;
+    width: 225px;
+    height: 350px;
+  }
+}

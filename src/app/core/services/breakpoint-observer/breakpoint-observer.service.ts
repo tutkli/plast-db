@@ -24,4 +24,8 @@ export class BreakpointObserverService {
       ])
       .pipe(map((result: BreakpointState): boolean => result.matches));
   }
+
+  observe(breakpoints: string[]): Observable<boolean> {
+    return this.breakpointObserver.observe(breakpoints).pipe(map((result: BreakpointState): boolean => result.matches));
+  }
 }
