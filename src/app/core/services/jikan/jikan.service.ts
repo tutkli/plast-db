@@ -1,40 +1,42 @@
 import { Injectable } from '@angular/core';
-import { map, Observable } from 'rxjs';
-import { Anime } from '../../models/anime/anime.model';
-import { HttpService } from '../http/http.service';
-import { JikanMapper } from '@mappers/jikan-mapper';
-import { Pairs } from '../../models/http/http.model';
-import { AnimeCharacter } from '../../models/character.model';
+import { from, map, Observable } from 'rxjs';
+import {
+  Anime,
+  AnimeCharacter,
+  AnimeSearchParams,
+  JikanClient,
+  JikanResponse,
+  JikanUniqueResponse,
+  TopAnimeFilter,
+} from '@tutkli/jikan-ts';
 
 @Injectable({
   providedIn: 'root',
 })
 export class JikanService {
-  private readonly JIKAN_API = 'https://api.jikan.moe/v4';
-
-  constructor(private httpService: HttpService) {}
+  private readonly jikanClient = new JikanClient();
 
   getTopAnimes(): Observable<Anime[]> {
-    return this.httpService
-      .serverRequest('GET', `${this.JIKAN_API}/top/anime`, { params: { filter: 'airing' } })
-      .pipe(map(JikanMapper.deserializeAnimes));
+    return from(this.jikanClient.top.getTopAnime({ filter: TopAnimeFilter.airing })).pipe(
+      map((jikanResponse: JikanResponse<Anime>) => jikanResponse.data)
+    );
   }
 
-  getAnimeSearch(params: Pairs): Observable<Anime[]> {
-    return this.httpService
-      .serverRequest('GET', `${this.JIKAN_API}/anime`, { params })
-      .pipe(map(JikanMapper.deserializeAnimes));
+  getAnimeSearch(searchParams?: AnimeSearchParams): Observable<Anime[]> {
+    return from(this.jikanClient.anime.getAnimeSearch(searchParams)).pipe(
+      map((jikanResponse: JikanResponse<Anime>) => jikanResponse.data)
+    );
   }
 
   getAnimeDetail(malId: number): Observable<Anime> {
-    return this.httpService
-      .serverRequest('GET', `${this.JIKAN_API}/anime/${malId}`, {})
-      .pipe(map(JikanMapper.deserializeAnime));
+    return from(this.jikanClient.anime.getAnimeById(malId)).pipe(
+      map((jikanResponse: JikanUniqueResponse<Anime>) => jikanResponse.data)
+    );
   }
 
   getAnimeCharacters(malId: number): Observable<AnimeCharacter[]> {
-    return this.httpService
-      .serverRequest('GET', `${this.JIKAN_API}/anime/${malId}/characters`, {})
-      .pipe(map(JikanMapper.deserializeCharacters));
+    return from(this.jikanClient.anime.getAnimeCharacters(malId)).pipe(
+      map((jikanResponse: JikanResponse<AnimeCharacter>) => jikanResponse.data)
+    );
   }
 }

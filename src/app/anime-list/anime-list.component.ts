@@ -1,10 +1,10 @@
 import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Observable, Subject, switchMap, takeUntil } from 'rxjs';
-import { Anime } from '../core/models/anime/anime.model';
 import { JikanService } from '@services/jikan/jikan.service';
 import { AnimeGalleryComponent } from '@shared-components/anime-gallery/anime-gallery.component';
 import { ActivatedRoute, Params } from '@angular/router';
+import { Anime } from '@tutkli/jikan-ts';
 
 @Component({
   selector: 'plast-anime-list',

@@ -1,8 +1,8 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Anime } from '../../../core/models/anime/anime.model';
 import { AnimeCardComponent } from '@shared-components/anime-card/anime-card.component';
 import { MaxItemsPipe } from '@pipes/max-items/max-items.pipe';
+import { Anime } from '@tutkli/jikan-ts';
 
 @Component({
   selector: 'plast-anime-gallery',

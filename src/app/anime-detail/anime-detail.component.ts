@@ -3,10 +3,9 @@ import { CommonModule } from '@angular/common';
 import { ActivatedRoute, UrlSegment } from '@angular/router';
 import { first, Observable, switchMap } from 'rxjs';
 import { JikanService } from '@services/jikan/jikan.service';
-import { Anime } from '../core/models/anime/anime.model';
-import { AnimeCharacter } from '../core/models/character.model';
 import { BreakpointObserverService } from '@services/breakpoint-observer/breakpoint-observer.service';
 import { Breakpoints } from '@angular/cdk/layout';
+import { Anime, AnimeCharacter } from '@tutkli/jikan-ts';
 
 @Component({
   selector: 'plast-anime-detail',
