@@ -5,7 +5,7 @@ import { AppComponent } from './app/app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { provideRouter, withInMemoryScrolling } from '@angular/router';
-import { APP_ROUTES } from './app/core/routes/routes.const';
+import { APP_ROUTES } from '@routes/routes.const';
 import { InitService } from '@services/init/init.service';
 
 if (environment.production) {

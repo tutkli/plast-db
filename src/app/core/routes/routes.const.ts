@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { AnimeRouteName } from './anime-routes.const';
+import { AnimeRouteName } from './anime.routes';
 
 export enum AppRouteName {
   HOME = 'home',
@@ -24,6 +24,6 @@ export const APP_ROUTES: Routes = [
   },
   {
     path: AnimeRouteName.ANIME,
-    loadChildren: () => import('src/app/core/routes/anime-routes.const').then((mod) => mod.ANIME_ROUTES),
+    loadChildren: () => import('@routes/anime.routes').then((mod) => mod.ANIME_ROUTES),
   },
 ];

@@ -8,7 +8,7 @@
       "@pipes/*": ["./src/app/shared/pipes/*"],
       "@directives/*": ["./src/app/shared/directives/*"],
       "@services/*": ["./src/app/core/services/*"],
-      "@mappers/*": ["./src/app/core/mappers/*"],
+      "@routes/*": ["./src/app/core/routes/*"],
     },
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
