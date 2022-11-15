@@ -13,8 +13,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Dependencies
 
-* [Jikan API](https://jikan.moe/) Open Source anime REST API
-* [Angular Material](https://material.angular.io/) Official Angular UI component library
+- [Jikan-ts](https://github.com/tutkli/jikan-ts) Node.js wrapper of the Jikan API with built-in typings
+- [Angular Material](https://material.angular.io/) Official Angular UI component library
 
 ## Available Scripts
 
