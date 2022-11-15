@@ -8,7 +8,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { fadeInOnEnter } from '../../../../styles/animations';
 import { ClickOutsideDirective } from '@directives/click-outside/click-outside.directive';
-import { AnimeRouteName } from '../../../core/const/anime-routes.const';
+import { AnimeRouteName } from '../../../core/routes/anime-routes.const';
 
 type DropdownMenu = 'menu' | 'search' | undefined;
 

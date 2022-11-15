@@ -14,16 +14,16 @@ export const APP_ROUTES: Routes = [
   },
   {
     path: AppRouteName.HOME,
-    loadComponent: () => import('src/app/home/home.component').then((mod) => mod.HomeComponent),
+    loadComponent: () => import('src/app/views/home/home.component').then((mod) => mod.HomeComponent),
     title: 'PLAST DB | Home',
   },
   {
     path: AppRouteName.ABOUT,
-    loadComponent: () => import('src/app/about/about.component').then((mod) => mod.AboutComponent),
+    loadComponent: () => import('src/app/views/about/about.component').then((mod) => mod.AboutComponent),
     title: 'PLAST DB | About',
   },
   {
     path: AnimeRouteName.ANIME,
-    loadChildren: () => import('src/app/core/const/anime-routes.const').then((mod) => mod.ANIME_ROUTES),
+    loadChildren: () => import('src/app/core/routes/anime-routes.const').then((mod) => mod.ANIME_ROUTES),
   },
 ];

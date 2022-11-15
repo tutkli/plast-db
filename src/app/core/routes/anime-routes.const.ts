@@ -10,12 +10,13 @@ export const ANIME_ROUTES: Routes = [
   { path: '', redirectTo: AnimeRouteName.LIST, pathMatch: 'full' },
   {
     path: AnimeRouteName.LIST,
-    loadComponent: () => import('src/app/anime-list/anime-list.component').then((mod) => mod.AnimeListComponent),
+    loadComponent: () => import('src/app/views/anime-list/anime-list.component').then((mod) => mod.AnimeListComponent),
     title: 'PLAST DB | List',
   },
   {
     path: AnimeRouteName.DETAIL,
-    loadComponent: () => import('src/app/anime-detail/anime-detail.component').then((mod) => mod.AnimeDetailComponent),
+    loadComponent: () =>
+      import('src/app/views/anime-list/anime-detail/anime-detail.component').then((mod) => mod.AnimeDetailComponent),
     title: 'PLAST DB | Detail',
   },
 ];
