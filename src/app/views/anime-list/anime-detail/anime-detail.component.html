@@ -39,7 +39,7 @@
         </p>
         <p>
           <span class="information__title">Studios:</span>
-          <span *ngFor="let studio of anime.studio; let last=last">
+          <span *ngFor="let studio of anime.studios; let last=last">
             {{studio.name}}<ng-container *ngIf="!last">,</ng-container>
           </span>
         </p>

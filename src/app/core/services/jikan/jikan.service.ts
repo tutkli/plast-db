@@ -1,14 +1,6 @@
 import { Injectable } from '@angular/core';
 import { from, map, Observable } from 'rxjs';
-import {
-  Anime,
-  AnimeCharacter,
-  AnimeSearchParams,
-  JikanClient,
-  JikanResponse,
-  JikanUniqueResponse,
-  TopAnimeFilter,
-} from '@tutkli/jikan-ts';
+import { Anime, AnimeCharacter, AnimeSearchParams, JikanClient, JikanResponse, TopAnimeFilter } from '@tutkli/jikan-ts';
 
 @Injectable({
   providedIn: 'root',
@@ -18,25 +10,25 @@ export class JikanService {
 
   getTopAnimes(): Observable<Anime[]> {
     return from(this.jikanClient.top.getTopAnime({ filter: TopAnimeFilter.airing })).pipe(
-      map((jikanResponse: JikanResponse<Anime>) => jikanResponse.data)
+      map((jikanResponse: JikanResponse<Anime[]>) => jikanResponse.data)
     );
   }
 
   getAnimeSearch(searchParams?: AnimeSearchParams): Observable<Anime[]> {
     return from(this.jikanClient.anime.getAnimeSearch(searchParams)).pipe(
-      map((jikanResponse: JikanResponse<Anime>) => jikanResponse.data)
+      map((jikanResponse: JikanResponse<Anime[]>) => jikanResponse.data)
     );
   }
 
   getAnimeDetail(malId: number): Observable<Anime> {
     return from(this.jikanClient.anime.getAnimeById(malId)).pipe(
-      map((jikanResponse: JikanUniqueResponse<Anime>) => jikanResponse.data)
+      map((jikanResponse: JikanResponse<Anime>) => jikanResponse.data)
     );
   }
 
   getAnimeCharacters(malId: number): Observable<AnimeCharacter[]> {
     return from(this.jikanClient.anime.getAnimeCharacters(malId)).pipe(
-      map((jikanResponse: JikanResponse<AnimeCharacter>) => jikanResponse.data)
+      map((jikanResponse: JikanResponse<AnimeCharacter[]>) => jikanResponse.data)
     );
   }
 }
