@@ -18,7 +18,8 @@
       ],
       "@routes/*": [
         "./src/app/core/routes/*"
-      ]
+      ],
+      "@app/svg/*": ["./src/app/svg/*"]
     },
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,

@@ -4,7 +4,24 @@
   "scripts": {
     "start": "ng serve",
     "eslint:lint": "npx eslint src/** --fix",
-    "analyze-bundle": "ng build -c production --aot --build-optimizer --stats-json && webpack-bundle-analyzer ./dist/plast-db/stats.json"
+    "analyze-bundle": "ng build -c production --aot --build-optimizer --stats-json && webpack-bundle-analyzer ./dist/plast-db/stats.json",
+    "svg:generate": "svg-generator"
+  },
+  "svgGenerator": {
+    "outputPath": "./src/app/svg",
+    "srcPath": "./src/assets/svg",
+    "svgoConfig": {
+      "plugins": [
+        "removeDimensions",
+        "cleanupAttrs",
+        {
+          "name": "convertColors",
+          "params": {
+            "currentColor": true
+          }
+        }
+      ]
+    }
   },
   "private": true,
   "dependencies": {
@@ -18,6 +35,7 @@
     "@angular/platform-browser": "15.0.4",
     "@angular/platform-browser-dynamic": "15.0.4",
     "@angular/router": "15.0.4",
+    "@ngneat/svg-icon": "^6.2.0",
     "@tutkli/jikan-ts": "^0.6.0",
     "rxjs": "7.5.7",
     "tslib": "2.4.0",
@@ -27,14 +45,18 @@
     "@angular-devkit/build-angular": "15.0.5",
     "@angular/cli": "15.0.5",
     "@angular/compiler-cli": "15.0.4",
+    "@ngneat/svg-generator": "^6.0.0",
     "@typescript-eslint/eslint-plugin": "5.41.0",
     "angular-cli-ghpages": "^1.0.3",
+    "autoprefixer": "^10.4.13",
     "eslint": "^8.26.0",
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-angular": "4.1.0",
     "eslint-plugin-prettier": "4.2.1",
+    "postcss": "^8.4.20",
     "prettier": "2.7.1",
     "prettier-eslint": "15.0.1",
+    "tailwindcss": "^3.2.4",
     "typescript": "4.8.4"
   }
 }

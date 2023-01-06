@@ -1,60 +1,28 @@
-<nav aria-label="Main navigation bar">
-  <mat-toolbar>
-    <mat-toolbar-row>
-      <div class="nav-container">
-        <h2 class="title" [class.title--small]="(smallBreakpoint$ | async)">
-          <a routerLink="/home">PLAST DB</a>
-        </h2>
+<nav class="bg-black text-white fixed top-0 left-0 z-10 min-w-[100vw]">
+  <div class="flex flex-col">
+    <div class="flex flex-row justify-between align-middle p-6 sm:px-20">
+      <h2 class="font-semibold sm:text-2xl cursor-pointer">
+        <a routerLink="/home">PLAST DB</a>
+      </h2>
 
-        <div *ngIf="!(smallBreakpoint$ | async); else smallBreakpointTemplate" class="navigation-items">
-          <a routerLink="/anime/list">Browse</a>
-          <a routerLink="/about">About</a>
-          <input #searchInput type="text" placeholder="Search Anime" (keydown.enter)="searchAnime(searchInput)">
-        </div>
+      <div class="flex-row gap-5 font-medium text-lg hidden md:flex">
+        <a routerLink="/anime/list">Manga</a>
+        <a routerLink="/anime/list">Anime</a>
+        <a routerLink="/about">About</a>
       </div>
-    </mat-toolbar-row>
-  </mat-toolbar>
 
-  <ng-container *ngIf="(dropdownMenu$ | async) === 'menu'">
-    <ng-container *ngTemplateOutlet="dropdownMenuTemplate"></ng-container>
-  </ng-container>
+      <button aria-label="Menu Button" class="md:hidden flex items-center align-middle"
+              (click)="toggleDropdownMenu(); $event.stopPropagation()">
+        <svg-icon [key]="(dropdownMenu$ | async) ? 'close' : 'menu'" fontSize="1.5rem"></svg-icon>
+      </button>
+    </div>
 
-  <ng-container *ngIf="(dropdownMenu$ | async) === 'search'">
-    <ng-container *ngTemplateOutlet="dropdownSearchTemplate"></ng-container>
-  </ng-container>
-</nav>
-
-<ng-template #smallBreakpointTemplate>
-  <div class="navigation-items navigation-items--small">
-    <button mat-icon-button aria-label="Menu Button"
-            (click)="toggleDropdownMenu('menu'); $event.stopPropagation()">
-      <mat-icon>menu</mat-icon>
-    </button>
-
-    <button class="search-button" mat-icon-button aria-label="Search Button"
-            (click)="toggleDropdownMenu('search'); $event.stopPropagation()">
-      <mat-icon>search</mat-icon>
-    </button>
+    <div class="md:hidden flex-col font-medium text-lg bg-white text-black"
+         [ngClass]="{'flex': dropdownMenu$ | async, 'hidden': !(dropdownMenu$ | async)}"
+         @fadeInOnEnter>
+      <a routerLink="/anime/list" class="p-3 sm:px-20 hover:bg-gray-200">Manga</a>
+      <a routerLink="/anime/list" class="p-3 sm:px-20 hover:bg-gray-200">Anime</a>
+      <a routerLink="/about" class="p-3 sm:px-20 hover:bg-gray-200">About</a>
+    </div>
   </div>
-</ng-template>
-
-<ng-template #dropdownMenuTemplate>
-  <nav class="dropdown-menu" @fadeInOnEnter (plastClickOutside)="toggleDropdownMenu(undefined)"
-       aria-label="Dropdown menu with navigation items">
-    <div class="dropdown-menu__navigation-items">
-      <a routerLink="/anime/list" (click)="toggleDropdownMenu(undefined)">BROWSE</a>
-      <a routerLink="/about" (click)="toggleDropdownMenu(undefined)">ABOUT</a>
-    </div>
-  </nav>
-</ng-template>
-
-<ng-template #dropdownSearchTemplate>
-  <nav class="dropdown-menu" @fadeInOnEnter (plastClickOutside)="toggleDropdownMenu(undefined)"
-       aria-label="Dropdown menu with a search bar">
-    <div class="dropdown-menu__navigation-items">
-      <input #dropdownSearchInput [autofocus]="true" type="text" placeholder="Search Anime"
-             (keydown.enter)="searchAnime(dropdownSearchInput)">
-    </div>
-  </nav>
-</ng-template>
-
+</nav>

@@ -7,6 +7,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { provideRouter, withInMemoryScrolling } from '@angular/router';
 import { APP_ROUTES } from '@routes/routes.const';
 import { InitService } from '@services/init/init.service';
+import { provideSvgIcons } from '@ngneat/svg-icon';
+import { menuIcon } from '@app/svg/menu';
+import { closeIcon } from '@app/svg/close';
+import { searchIcon } from '@app/svg/search';
 
 if (environment.production) {
   enableProdMode();
@@ -24,6 +28,7 @@ bootstrapApplication(AppComponent, {
     importProvidersFrom(BrowserAnimationsModule),
     importProvidersFrom(HttpClientModule),
     provideRouter(APP_ROUTES, withInMemoryScrolling({ scrollPositionRestoration: 'enabled' })),
+    provideSvgIcons([menuIcon, closeIcon, searchIcon]),
     InitService,
     {
       provide: APP_INITIALIZER,
