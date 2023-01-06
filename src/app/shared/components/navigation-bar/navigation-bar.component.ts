@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { Router, RouterLinkWithHref } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { BreakpointObserverService } from '@services/breakpoint-observer/breakpoint-observer.service';
 import { BehaviorSubject, Observable, share } from 'rxjs';
 import { MatIconModule } from '@angular/material/icon';
@@ -15,7 +15,7 @@ type DropdownMenu = 'menu' | 'search' | undefined;
 @Component({
   selector: 'plast-navigation-bar',
   standalone: true,
-  imports: [CommonModule, MatToolbarModule, RouterLinkWithHref, MatIconModule, MatButtonModule, ClickOutsideDirective],
+  imports: [CommonModule, MatToolbarModule, RouterLink, MatIconModule, MatButtonModule, ClickOutsideDirective],
   templateUrl: './navigation-bar.component.html',
   styleUrls: ['./navigation-bar.component.scss'],
   animations: [fadeInOnEnter],
