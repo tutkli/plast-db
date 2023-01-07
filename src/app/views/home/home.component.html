@@ -1,10 +1,12 @@
-<div class="home-background"></div>
-<header class="home-header">
-  <p class="home-header__title">PLAST DB</p>
-  <p class="home-header__text">Browse the latest Animes in an extended Database.</p>
-  <button mat-flat-button>
-    <a routerLink="/anime/list">Browse</a>
-  </button>
-</header>
+<div class="relative min-h-[100vh] max-h-[100vh] bg-no-repeat bg-cover z-0 flex flex-col justify-center items-center align-middle"
+     [style.background-image]="backgroundImage">
+  <div class="absolute top-0 left-0 h-full w-full bg-black opacity-70 z-0"></div>
+
+  <header class="p-6 z-10 flex flex-col gap-3 justify-center items-center align-middle text-white text-center">
+    <h1 class="font-semibold text-5xl md:text-8xl">PLAST DB</h1>
+    <p class="text-lg sm:text-xl md:text-2xl">Browse the latest Animes and Mangas in an extended database</p>
+  </header>
+</div>
 
 <plast-top-animes></plast-top-animes>
+<plast-top-mangas></plast-top-mangas>

@@ -1,6 +1,15 @@
 import { Injectable } from '@angular/core';
 import { from, map, Observable } from 'rxjs';
-import { Anime, AnimeCharacter, AnimeSearchParams, JikanClient, JikanResponse, TopAnimeFilter } from '@tutkli/jikan-ts';
+import {
+  Anime,
+  AnimeCharacter,
+  AnimeSearchParams,
+  JikanClient,
+  JikanResponse,
+  Manga,
+  TopAnimeFilter,
+  TopMangaFilter,
+} from '@tutkli/jikan-ts';
 
 @Injectable({
   providedIn: 'root',
@@ -11,6 +20,12 @@ export class JikanService {
   getTopAnimes(): Observable<Anime[]> {
     return from(this.jikanClient.top.getTopAnime({ filter: TopAnimeFilter.airing })).pipe(
       map((jikanResponse: JikanResponse<Anime[]>) => jikanResponse.data)
+    );
+  }
+
+  getTopMangas(): Observable<Manga[]> {
+    return from(this.jikanClient.top.getTopManga({ filter: TopMangaFilter.publishing })).pipe(
+      map((jikanResponse: JikanResponse<Manga[]>) => jikanResponse.data)
     );
   }
 

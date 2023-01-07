@@ -11,6 +11,8 @@ import { provideSvgIcons } from '@ngneat/svg-icon';
 import { menuIcon } from '@app/svg/menu';
 import { closeIcon } from '@app/svg/close';
 import { searchIcon } from '@app/svg/search';
+import { chevronLeftIcon } from '@app/svg/chevron-left';
+import { chevronRightIcon } from '@app/svg/chevron-right';
 
 if (environment.production) {
   enableProdMode();
@@ -28,7 +30,7 @@ bootstrapApplication(AppComponent, {
     importProvidersFrom(BrowserAnimationsModule),
     importProvidersFrom(HttpClientModule),
     provideRouter(APP_ROUTES, withInMemoryScrolling({ scrollPositionRestoration: 'enabled' })),
-    provideSvgIcons([menuIcon, closeIcon, searchIcon]),
+    provideSvgIcons([menuIcon, closeIcon, searchIcon, chevronLeftIcon, chevronRightIcon]),
     InitService,
     {
       provide: APP_INITIALIZER,

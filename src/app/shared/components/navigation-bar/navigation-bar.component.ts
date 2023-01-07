@@ -10,7 +10,6 @@ import { SvgIconComponent } from '@ngneat/svg-icon';
   standalone: true,
   imports: [NgClass, AsyncPipe, RouterLink, SvgIconComponent],
   templateUrl: './navigation-bar.component.html',
-  styleUrls: ['./navigation-bar.component.scss'],
   animations: [fadeInOnEnter],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

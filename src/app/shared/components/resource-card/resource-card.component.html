@@ -1,0 +1,11 @@
+<ng-container *ngIf="resource; else cardPlaceholderTemplate">
+  <a class="flex flex-col justify-end w-[160px] h-[230px] sm:w-[200px] sm:h-[280px] border-solid border-4 hover:border-emerald-700 hover:opacity-80"
+     [style.background-image]="'url(' + resource.images.webp?.image_url + ')'"
+     [routerLink]="link">
+    <p class="py-4 px-2 bg-emerald-700 text-white truncate">{{ resource.title }}</p>
+  </a>
+</ng-container>
+
+<ng-template #cardPlaceholderTemplate>
+  <div class="flex flex-col justify-end w-[160px] h-[230px] sm:w-[200px] sm:h-[280px] animate-pulse bg-gray-300"></div>
+</ng-template>

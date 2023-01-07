@@ -1,15 +1,15 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { MatButtonModule } from '@angular/material/button';
 import { TopAnimesComponent } from '@shared-components/top-animes/top-animes.component';
-import { RouterLink } from '@angular/router';
+import { TopMangasComponent } from '@shared-components/top-mangas/top-mangas.component';
 
 @Component({
   selector: 'plast-home',
   standalone: true,
-  imports: [CommonModule, MatButtonModule, TopAnimesComponent, RouterLink],
+  imports: [TopAnimesComponent, TopMangasComponent],
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HomeComponent {}
+export class HomeComponent {
+  readonly backgroundImage =
+    'url("https://i.blogs.es/10a197/captura-de-pantalla-2021-11-01-a-las-11.30.23/1366_2000.webp")';
+}
