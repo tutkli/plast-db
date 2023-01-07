@@ -15,8 +15,7 @@ export const ANIME_ROUTES: Routes = [
   },
   {
     path: AnimeRouteName.DETAIL,
-    loadComponent: () =>
-      import('src/app/views/anime-list/anime-detail/anime-detail.component').then((mod) => mod.AnimeDetailComponent),
+    loadComponent: () => import('src/app/views/anime-detail/anime-detail.component'),
     title: 'PLAST DB | Detail',
   },
 ];

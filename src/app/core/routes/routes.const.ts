@@ -14,7 +14,7 @@ export const APP_ROUTES: Routes = [
   },
   {
     path: AppRouteName.HOME,
-    loadComponent: () => import('src/app/views/home/home.component').then((mod) => mod.HomeComponent),
+    loadComponent: () => import('src/app/views/home/home.component'),
     title: 'PLAST DB | Home',
   },
   {

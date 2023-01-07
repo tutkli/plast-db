@@ -9,7 +9,7 @@ import { TopMangasComponent } from '@shared-components/top-mangas/top-mangas.com
   templateUrl: './home.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HomeComponent {
+export default class HomeComponent {
   readonly backgroundImage =
     'url("https://i.blogs.es/10a197/captura-de-pantalla-2021-11-01-a-las-11.30.23/1366_2000.webp")';
 }

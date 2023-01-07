@@ -1,6 +1,6 @@
 <nav class="bg-black text-white fixed top-0 left-0 z-50 min-w-[100vw]">
   <div class="flex flex-col">
-    <div class="flex flex-row justify-between align-middle p-6 sm:px-20">
+    <div class="flex flex-row justify-between align-middle p-6 lg:px-20">
       <h2 class="font-semibold sm:text-2xl cursor-pointer">
         <a routerLink="/home">PLAST DB</a>
       </h2>
@@ -20,9 +20,9 @@
     <div class="md:hidden flex-col font-medium text-lg bg-white text-black"
          [ngClass]="{'flex': dropdownMenu$ | async, 'hidden': !(dropdownMenu$ | async)}"
          @fadeInOnEnter>
-      <a routerLink="/anime/list" class="p-3 sm:px-20 hover:bg-gray-200">Manga</a>
-      <a routerLink="/anime/list" class="p-3 sm:px-20 hover:bg-gray-200">Anime</a>
-      <a routerLink="/about" class="p-3 sm:px-20 hover:bg-gray-200">About</a>
+      <a routerLink="/anime/list" class="p-3 lg:px-20 hover:bg-gray-200">Manga</a>
+      <a routerLink="/anime/list" class="p-3 lg:px-20 hover:bg-gray-200">Anime</a>
+      <a routerLink="/about" class="p-3 lg:px-20 hover:bg-gray-200">About</a>
     </div>
   </div>
 </nav>

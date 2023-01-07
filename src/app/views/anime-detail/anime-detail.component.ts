@@ -1,37 +1,22 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { AsyncPipe, DatePipe, NgClass, NgForOf, NgIf, UpperCasePipe } from '@angular/common';
 import { ActivatedRoute, UrlSegment } from '@angular/router';
 import { first, Observable, switchMap } from 'rxjs';
 import { JikanService } from '@services/jikan/jikan.service';
-import { BreakpointObserverService } from '@services/breakpoint-observer/breakpoint-observer.service';
-import { Breakpoints } from '@angular/cdk/layout';
 import { Anime, AnimeCharacter } from '@tutkli/jikan-ts';
 
 @Component({
   selector: 'plast-anime-detail',
   standalone: true,
-  imports: [CommonModule],
+  imports: [NgForOf, NgIf, AsyncPipe, UpperCasePipe, DatePipe, NgClass],
   templateUrl: './anime-detail.component.html',
-  styleUrls: ['./anime-detail.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AnimeDetailComponent implements OnInit {
+export default class AnimeDetailComponent implements OnInit {
   anime$!: Observable<Anime>;
   animeCharacters$!: Observable<AnimeCharacter[]>;
 
-  get smallBreakpoint$(): Observable<boolean> {
-    return this.breakpointObserverService.observe([
-      Breakpoints.TabletPortrait,
-      Breakpoints.HandsetPortrait,
-      Breakpoints.WebPortrait,
-    ]);
-  }
-
-  constructor(
-    private activatedRoute: ActivatedRoute,
-    private jikanService: JikanService,
-    private breakpointObserverService: BreakpointObserverService
-  ) {}
+  constructor(private activatedRoute: ActivatedRoute, private jikanService: JikanService) {}
 
   ngOnInit(): void {
     this.anime$ = this.activatedRoute.url.pipe(
