@@ -2,11 +2,11 @@
   <div class="flex flex-row flex-wrap sm:flex-nowrap gap-3 justify-between items-center">
     <h2 class="w-fit whitespace-nowrap font-semibold text-lg sm:text-xl md:text-2xl">Top airing animes</h2>
     <div class="bg-gray-400 h-1.5 w-full"></div>
-    <a class="w-fit cursor-pointer whitespace-nowrap uppercase font-semibold text-emerald-700 hover:opacity-80">View All</a>
+    <a class="w-fit cursor-pointer whitespace-nowrap uppercase font-semibold text-indigo-700 hover:opacity-80">View All</a>
   </div>
 
   <div class="relative flex flex-row gap-1 max-w-full h-[230px] sm:h-[280px]">
-    <button class="h-full sm:p-2 bg-emerald-700 text-white hover:opacity-80 shadow-[5px_5px_10px_10px_rgba(232,232,232,0.8)] z-10"
+    <button class="h-full sm:p-2 bg-black text-white hover:opacity-80 shadow-[5px_5px_10px_10px_rgba(232,232,232,0.8)] z-10"
             (click)="scrollAnimes('left')">
       <svg-icon key="chevron-left" fontSize="1.5rem"></svg-icon>
     </button>
@@ -20,7 +20,7 @@
                            [link]="'/anime/' +  anime.mal_id"></plast-resource-card>
     </div>
 
-    <button class="h-full sm:p-2 bg-emerald-700 text-white hover:opacity-80 shadow-[-5px_5px_10px_10px_rgba(232,232,232,0.8)] z-10"
+    <button class="h-full sm:p-2 bg-black text-white hover:opacity-80 shadow-[-5px_5px_10px_10px_rgba(232,232,232,0.8)] z-10"
             (click)="scrollAnimes('right')">
       <svg-icon key="chevron-right" fontSize="1.5rem"></svg-icon>
     </button>
