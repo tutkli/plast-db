@@ -12,8 +12,7 @@
     </button>
 
     <div *ngIf="(topAnimes$ | async)?.length; else placeholderTemplate"
-         class="flex flex-row gap-5 overflow-hidden"
-         [style.overflow-scrolling]="'touch'"
+         class="flex flex-row gap-5 overflow-auto overflow-y-hidden"
          #animeScrollContainer>
       <plast-resource-card *ngFor="let anime of (topAnimes$ | async) | maxItems: 10"
                            [resource]="anime"

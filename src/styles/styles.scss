@@ -6,6 +6,7 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Poppins, "Helvetica Neue", sans-serif; background-color: #f1f1f1; overflow-x: hidden }
 
 ::-webkit-scrollbar {
+  height: 5px;
   width: 10px;
 }
 

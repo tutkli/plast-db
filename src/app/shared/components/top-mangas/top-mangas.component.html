@@ -12,8 +12,7 @@
     </button>
 
     <div *ngIf="(topMangas$ | async)?.length; else placeholderTemplate"
-         class="flex flex-row gap-5 overflow-hidden"
-         [style.overflow-scrolling]="'touch'"
+         class="flex flex-row gap-5 overflow-auto overflow-y-hidden"
          #mangaScrollContainer>
       <plast-resource-card *ngFor="let manga of (topMangas$ | async) | maxItems: 10"
                            [resource]="manga"
