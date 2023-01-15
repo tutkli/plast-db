@@ -11,10 +11,12 @@ import { closeIcon } from '@app/svg/close';
 import { searchIcon } from '@app/svg/search';
 import { chevronLeftIcon } from '@app/svg/chevron-left';
 import { chevronRightIcon } from '@app/svg/chevron-right';
+import { ReactiveFormsModule } from '@angular/forms';
 
 bootstrapApplication(AppComponent, {
   providers: [
     importProvidersFrom(BrowserModule),
+    importProvidersFrom(ReactiveFormsModule),
     provideAnimations(),
     provideHttpClient(),
     provideRouter(APP_ROUTES, withInMemoryScrolling({ scrollPositionRestoration: 'enabled' })),

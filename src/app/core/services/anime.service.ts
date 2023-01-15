@@ -6,10 +6,8 @@ import { Anime, AnimeCharacter, AnimeClient, AnimeSearchParams, JikanResponse } 
 export class AnimeService {
   private readonly animeClient = new AnimeClient();
 
-  getAnimeSearch(searchParams?: AnimeSearchParams): Observable<Anime[]> {
-    return from(this.animeClient.getAnimeSearch(searchParams)).pipe(
-      map((jikanResponse: JikanResponse<Anime[]>) => jikanResponse.data)
-    );
+  getAnimeSearch(searchParams?: AnimeSearchParams): Promise<JikanResponse<Anime[]>> {
+    return this.animeClient.getAnimeSearch(searchParams);
   }
 
   getAnimeDetail(malId: number): Observable<Anime> {

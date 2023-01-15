@@ -1,8 +1,10 @@
-<section class="anime-list-section">
-  <div class="section-title">
-    <h2 class="section-title__h2">Animes</h2>
-    <div class="section-title__divider"></div>
+<section class="mt-[72px] sm:mt-[80px] py-14 px-6 lg:px-20 flex flex-col gap-5">
+  <div class="flex flex-row flex-wrap sm:flex-nowrap gap-3 sm:gap-6 justify-between items-center">
+    <h2 class="w-fit whitespace-nowrap font-semibold text-xl sm:text-2xl md:text-3xl">Animes</h2>
+    <div class="bg-gray-400 h-1.5 w-full"></div>
   </div>
+
+  <plast-anime-filter></plast-anime-filter>
 
   <plast-anime-gallery [animes]="animes$ | async"></plast-anime-gallery>
 </section>
