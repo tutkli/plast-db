@@ -5,8 +5,8 @@
     "start": "ng serve",
     "eslint:lint": "npx eslint src/** --fix",
     "analyze-bundle": "ng build -c production --aot --build-optimizer --stats-json && webpack-bundle-analyzer ./dist/plast-db/stats.json",
-    "prestart": "yarn run svg",
-    "prebuild": "yarn run svg",
+    "prestart": "yarn run svg:generate",
+    "prebuild": "yarn run svg:generate",
     "svg:generate": "svg-generator"
   },
   "svgGenerator": {

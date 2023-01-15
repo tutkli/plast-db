@@ -1,11 +1,11 @@
-import { ChangeDetectionStrategy, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, inject, OnInit, ViewChild } from '@angular/core';
 import { AsyncPipe, NgForOf, NgIf } from '@angular/common';
 import { Observable } from 'rxjs';
-import { JikanService } from '@services/jikan/jikan.service';
 import { Anime } from '@tutkli/jikan-ts';
 import { ResourceCardComponent } from '@shared-components/resource-card/resource-card.component';
 import { MaxItemsPipe } from '@pipes/max-items/max-items.pipe';
 import { SvgIconComponent } from '@ngneat/svg-icon';
+import { TopService } from '@services/top.service';
 
 @Component({
   selector: 'plast-top-animes',
@@ -17,13 +17,13 @@ import { SvgIconComponent } from '@ngneat/svg-icon';
 export class TopAnimesComponent implements OnInit {
   @ViewChild('animeScrollContainer') animeScrollContainer: ElementRef<HTMLDivElement> | undefined;
 
+  private topService = inject(TopService);
+
   topAnimes$!: Observable<Anime[]>;
   placeholderCards = new Array(10);
 
-  constructor(private jikanService: JikanService) {}
-
   ngOnInit(): void {
-    this.topAnimes$ = this.jikanService.getTopAnimes();
+    this.topAnimes$ = this.topService.getTopAnimes();
   }
 
   scrollAnimes(direction: 'left' | 'right'): void {

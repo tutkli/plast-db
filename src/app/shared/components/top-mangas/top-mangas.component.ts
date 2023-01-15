@@ -1,11 +1,11 @@
-import { ChangeDetectionStrategy, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, inject, OnInit, ViewChild } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Manga } from '@tutkli/jikan-ts';
-import { JikanService } from '@services/jikan/jikan.service';
 import { SvgIconComponent } from '@ngneat/svg-icon';
 import { AsyncPipe, NgForOf, NgIf } from '@angular/common';
 import { ResourceCardComponent } from '@shared-components/resource-card/resource-card.component';
 import { MaxItemsPipe } from '@pipes/max-items/max-items.pipe';
+import { TopService } from '@services/top.service';
 
 @Component({
   selector: 'plast-top-mangas',
@@ -17,13 +17,13 @@ import { MaxItemsPipe } from '@pipes/max-items/max-items.pipe';
 export class TopMangasComponent implements OnInit {
   @ViewChild('mangaScrollContainer') mangaScrollContainer: ElementRef<HTMLDivElement> | undefined;
 
+  private topService = inject(TopService);
+
   topMangas$!: Observable<Manga[]>;
   placeholderCards = new Array(10);
 
-  constructor(private jikanService: JikanService) {}
-
   ngOnInit(): void {
-    this.topMangas$ = this.jikanService.getTopMangas();
+    this.topMangas$ = this.topService.getTopMangas();
   }
 
   scrollMangas(direction: 'left' | 'right'): void {
