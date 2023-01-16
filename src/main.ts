@@ -9,9 +9,9 @@ import { provideSvgIcons } from '@ngneat/svg-icon';
 import { menuIcon } from '@app/svg/menu';
 import { closeIcon } from '@app/svg/close';
 import { searchIcon } from '@app/svg/search';
-import { chevronLeftIcon } from '@app/svg/chevron-left';
-import { chevronRightIcon } from '@app/svg/chevron-right';
 import { ReactiveFormsModule } from '@angular/forms';
+import { leftArrowCircleIcon } from '@app/svg/left-arrow-circle';
+import { rightArrowCircleIcon } from '@app/svg/right-arrow-circle';
 
 bootstrapApplication(AppComponent, {
   providers: [
@@ -20,6 +20,6 @@ bootstrapApplication(AppComponent, {
     provideAnimations(),
     provideHttpClient(),
     provideRouter(APP_ROUTES, withInMemoryScrolling({ scrollPositionRestoration: 'enabled' })),
-    provideSvgIcons([menuIcon, closeIcon, searchIcon, chevronLeftIcon, chevronRightIcon]),
+    provideSvgIcons([menuIcon, closeIcon, searchIcon, leftArrowCircleIcon, rightArrowCircleIcon]),
   ],
 }).catch((err) => console.error(err));

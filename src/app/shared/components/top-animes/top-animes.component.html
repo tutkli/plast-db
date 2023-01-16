@@ -1,27 +1,24 @@
-<section class="py-14 px-6 lg:px-20 flex flex-col gap-5">
+<section class="py-10 px-6 lg:px-20 flex flex-col gap-5">
   <div class="flex flex-row flex-wrap sm:flex-nowrap gap-3 justify-between items-center">
     <h2 class="w-fit whitespace-nowrap font-semibold text-lg sm:text-xl md:text-2xl">Top airing animes</h2>
     <div class="bg-gray-400 h-1.5 w-full"></div>
-    <a class="w-fit cursor-pointer whitespace-nowrap uppercase font-semibold text-indigo-700 hover:opacity-80">View All</a>
+    <a class="w-fit cursor-pointer whitespace-nowrap uppercase font-semibold text-indigo-700 hover:opacity-80" routerLink="/anime/list">View All</a>
   </div>
 
-  <div class="relative flex flex-row gap-1 max-w-full h-[230px] sm:h-[280px]">
-    <button class="h-full sm:p-2 bg-black text-white hover:opacity-80 shadow-[5px_5px_10px_10px_rgba(232,232,232,0.8)] z-10"
-            (click)="scrollAnimes('left')">
-      <svg-icon key="chevron-left" fontSize="1.5rem"></svg-icon>
+  <div *ngIf="(topAnimes$ | async)?.length; else placeholderTemplate"
+       class="max-w-full flex flex-row gap-5 overflow-auto overflow-y-hidden py-2"
+       #animeScrollContainer>
+    <plast-resource-card *ngFor="let anime of (topAnimes$ | async) | maxItems: 10"
+                         [resource]="anime"
+                         [link]="'/anime/' +  anime.mal_id"></plast-resource-card>
+  </div>
+
+  <div class="flex flex-row justify-end items-center gap-3 text-indigo-700">
+    <button (click)="scrollAnimes('left')" class="hover:opacity-80">
+      <svg-icon key="left-arrow-circle" fontSize="2rem" ></svg-icon>
     </button>
-
-    <div *ngIf="(topAnimes$ | async)?.length; else placeholderTemplate"
-         class="flex flex-row gap-5 overflow-auto overflow-y-hidden"
-         #animeScrollContainer>
-      <plast-resource-card *ngFor="let anime of (topAnimes$ | async) | maxItems: 10"
-                           [resource]="anime"
-                           [link]="'/anime/' +  anime.mal_id"></plast-resource-card>
-    </div>
-
-    <button class="h-full sm:p-2 bg-black text-white hover:opacity-80 shadow-[-5px_5px_10px_10px_rgba(232,232,232,0.8)] z-10"
-            (click)="scrollAnimes('right')">
-      <svg-icon key="chevron-right" fontSize="1.5rem"></svg-icon>
+    <button (click)="scrollAnimes('right')" class="hover:opacity-80">
+      <svg-icon key="right-arrow-circle" fontSize="2rem"></svg-icon>
     </button>
   </div>
 

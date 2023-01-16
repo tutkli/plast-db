@@ -6,12 +6,33 @@ import { ResourceCardComponent } from '@shared-components/resource-card/resource
 import { MaxItemsPipe } from '@pipes/max-items/max-items.pipe';
 import { SvgIconComponent } from '@ngneat/svg-icon';
 import { TopService } from '@services/top.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'plast-top-animes',
   standalone: true,
-  imports: [ResourceCardComponent, MaxItemsPipe, SvgIconComponent, AsyncPipe, NgIf, NgForOf],
+  imports: [ResourceCardComponent, MaxItemsPipe, SvgIconComponent, AsyncPipe, NgIf, NgForOf, RouterLink],
   templateUrl: './top-animes.component.html',
+  styles: [
+    `
+      ::-webkit-scrollbar {
+        height: 5px;
+        width: 10px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: #d9d9d9;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: #4338ca;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: #4338cacc;
+      }
+    `,
+  ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TopAnimesComponent implements OnInit {
