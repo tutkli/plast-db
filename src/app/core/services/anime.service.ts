@@ -7,7 +7,8 @@ export class AnimeService {
   private readonly animeClient = new AnimeClient();
 
   getAnimeSearch(searchParams?: AnimeSearchParams): Promise<JikanResponse<Anime[]>> {
-    return this.animeClient.getAnimeSearch(searchParams);
+    const params = { ...searchParams, limit: 20 };
+    return this.animeClient.getAnimeSearch(params);
   }
 
   getAnimeDetail(malId: number): Observable<Anime> {

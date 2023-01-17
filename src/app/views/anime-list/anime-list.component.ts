@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, inject, OnDestroy, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { BehaviorSubject, Subject, takeUntil } from 'rxjs';
-import { AnimeGalleryComponent } from '@shared-components/anime-gallery/anime-gallery.component';
+import { ResourceGalleryComponent } from '@shared-components/resource-gallery/resource-gallery.component';
 import { Anime } from '@tutkli/jikan-ts';
 import { AnimeService } from '@services/anime.service';
 import { AnimeFilterComponent } from '@shared-components/anime-filter/anime-filter.component';
@@ -10,7 +10,7 @@ import { AnimeFilterService } from '@services/anime-filter.service';
 @Component({
   selector: 'plast-anime-list',
   standalone: true,
-  imports: [CommonModule, AnimeGalleryComponent, AnimeFilterComponent],
+  imports: [ResourceGalleryComponent, AnimeFilterComponent, AsyncPipe],
   templateUrl: './anime-list.component.html',
   styleUrls: ['./anime-list.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
