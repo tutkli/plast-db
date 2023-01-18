@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, inject, OnDestroy, OnInit } from '@angular/core';
 import { AsyncPipe } from '@angular/common';
-import { BehaviorSubject, Subject, takeUntil } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { ResourceGalleryComponent } from '@shared-components/resource-gallery/resource-gallery.component';
 import { Anime } from '@tutkli/jikan-ts';
 import { AnimeService } from '@services/anime.service';
@@ -20,16 +20,11 @@ export class AnimeListComponent implements OnInit, OnDestroy {
   private animeService = inject(AnimeService);
   private _onDestroy: Subject<void> = new Subject<void>();
 
-  animes$: BehaviorSubject<Anime[]> = new BehaviorSubject<Anime[]>([]);
+  get animes$(): Observable<Anime[]> {
+    return this.animeFilterService.animes$;
+  }
 
   ngOnInit(): void {
-    this.animeFilterService.form.valueChanges.pipe(takeUntil(this._onDestroy)).subscribe({
-      next: async (params) => {
-        const jikanResponse = await this.animeService.getAnimeSearch(params);
-        this.animes$.next(jikanResponse.data);
-      },
-    });
-
     this.animeFilterService.form.reset();
   }
 

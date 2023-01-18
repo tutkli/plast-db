@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MaxItemsPipe } from '@pipes/max-items/max-items.pipe';
+import { MaxItemsPipe } from '@pipes/max-items.pipe';
 import { RouterLink } from '@angular/router';
 import { Anime, Manga } from '@tutkli/jikan-ts';
 

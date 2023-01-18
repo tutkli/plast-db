@@ -3,7 +3,7 @@ import { AsyncPipe, NgForOf, NgIf } from '@angular/common';
 import { Observable } from 'rxjs';
 import { Anime } from '@tutkli/jikan-ts';
 import { ResourceCardComponent } from '@shared-components/resource-card/resource-card.component';
-import { MaxItemsPipe } from '@pipes/max-items/max-items.pipe';
+import { MaxItemsPipe } from '@pipes/max-items.pipe';
 import { SvgIconComponent } from '@ngneat/svg-icon';
 import { TopService } from '@services/top.service';
 import { RouterLink } from '@angular/router';

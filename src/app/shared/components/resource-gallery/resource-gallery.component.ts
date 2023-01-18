@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 import { NgForOf, NgIf } from '@angular/common';
 import { ResourceCardComponent } from '@shared-components/resource-card/resource-card.component';
-import { MaxItemsPipe } from '@pipes/max-items/max-items.pipe';
+import { MaxItemsPipe } from '@pipes/max-items.pipe';
 import { Anime, Manga } from '@tutkli/jikan-ts';
 
 @Component({

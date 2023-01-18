@@ -18,7 +18,7 @@ export class TextInputComponent implements ControlValueAccessor {
   @Input() icon: SvgIcons | undefined;
 
   inputValue = '';
-  onChange = (_: any) => {};
+  onChange = (_: string) => {};
   onTouched = () => {};
 
   constructor(public ngControl: NgControl) {

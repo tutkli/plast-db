@@ -4,7 +4,7 @@ import { Manga } from '@tutkli/jikan-ts';
 import { SvgIconComponent } from '@ngneat/svg-icon';
 import { AsyncPipe, NgForOf, NgIf } from '@angular/common';
 import { ResourceCardComponent } from '@shared-components/resource-card/resource-card.component';
-import { MaxItemsPipe } from '@pipes/max-items/max-items.pipe';
+import { MaxItemsPipe } from '@pipes/max-items.pipe';
 import { TopService } from '@services/top.service';
 import { RouterLink } from '@angular/router';
 

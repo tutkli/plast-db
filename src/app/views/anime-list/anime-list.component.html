@@ -4,7 +4,7 @@
     <div class="bg-gray-400 h-1.5 w-full"></div>
   </div>
 
-  <plast-anime-filter></plast-anime-filter>
-
-  <plast-resource-gallery [resources]="animes$ | async" resourceType="anime"></plast-resource-gallery>
+  <plast-anime-filter>
+    <plast-resource-gallery [resources]="animes$ | async" resourceType="anime"></plast-resource-gallery>
+  </plast-anime-filter>
 </section>

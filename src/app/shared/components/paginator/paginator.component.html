@@ -1,0 +1,16 @@
+<div *ngIf="pagination && pagination.items" class="flex flex-col gap-2 justify-center items-center">
+  <p>Showing <span class="font-semibold">{{ from }}</span> to <span class="font-semibold">{{ to }}</span> of <span class="font-semibold">{{ total }}</span></p>
+
+  <div class="flex gap-2">
+    <button (click)="emitChanges(currentPage - 1)"
+            [disabled]="currentPage === 1"
+            [class.bg-gray-500]="currentPage === 1"
+            [class.hover:opacity-80]="currentPage !== 1"
+            class="text-white bg-indigo-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-sm px-4 py-2">Prev</button>
+    <button (click)="emitChanges(currentPage + 1)"
+            [disabled]="currentPage === lastVisiblePage"
+            [class.bg-gray-500]="currentPage === lastVisiblePage"
+            [class.hover:opacity-80]="currentPage !== lastVisiblePage"
+            class="text-white bg-indigo-700 hover:opacity-80 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-sm px-4 py-2">Next</button>
+  </div>
+</div>
