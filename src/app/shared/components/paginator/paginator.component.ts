@@ -1,12 +1,13 @@
 import { ChangeDetectionStrategy, Component, Input, OnChanges, SimpleChanges } from '@angular/core';
-import { NgIf } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { JikanPagination } from '@tutkli/jikan-ts';
 import { ControlValueAccessor, NgControl } from '@angular/forms';
+import { MaxItemsPipe } from '@pipes/max-items.pipe';
 
 @Component({
   selector: 'plast-paginator',
   standalone: true,
-  imports: [NgIf],
+  imports: [CommonModule, MaxItemsPipe],
   templateUrl: './paginator.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

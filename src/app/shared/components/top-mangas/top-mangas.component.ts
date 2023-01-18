@@ -2,15 +2,16 @@ import { ChangeDetectionStrategy, Component, ElementRef, inject, OnInit, ViewChi
 import { Observable } from 'rxjs';
 import { Manga } from '@tutkli/jikan-ts';
 import { SvgIconComponent } from '@ngneat/svg-icon';
-import { AsyncPipe, NgForOf, NgIf, SlicePipe } from '@angular/common';
+import { AsyncPipe, NgForOf, NgIf } from '@angular/common';
 import { ResourceCardComponent } from '@shared-components/resource-card/resource-card.component';
+import { MaxItemsPipe } from '@pipes/max-items.pipe';
 import { TopService } from '@services/top.service';
 import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'plast-top-mangas',
   standalone: true,
-  imports: [SvgIconComponent, NgIf, AsyncPipe, ResourceCardComponent, NgForOf, RouterLink, SlicePipe],
+  imports: [SvgIconComponent, NgIf, AsyncPipe, ResourceCardComponent, MaxItemsPipe, NgForOf, RouterLink],
   templateUrl: './top-mangas.component.html',
   styles: [
     `
