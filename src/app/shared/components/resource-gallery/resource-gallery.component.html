@@ -1,6 +1,6 @@
 <div *ngIf="resources?.length; else placeholderResourcesTemplate"
      class="flex flex-row flex-wrap justify-around items-center">
-  <plast-resource-card *ngFor="let resource of resources | maxItems: maxItems"
+  <plast-resource-card *ngFor="let resource of resources | slice: 0 : maxItems"
                        class="mb-3"
                        [resource]="resource"
                        [link]="'/' + resourceType + '/' + resource.mal_id"></plast-resource-card>

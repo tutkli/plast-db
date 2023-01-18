@@ -8,7 +8,7 @@
   <div *ngIf="(topAnimes$ | async)?.length; else placeholderTemplate"
        class="max-w-full flex flex-row gap-5 overflow-auto overflow-y-hidden py-2"
        #animeScrollContainer>
-    <plast-resource-card *ngFor="let anime of (topAnimes$ | async) | maxItems: 10"
+    <plast-resource-card *ngFor="let anime of (topAnimes$ | async) | slice: 0 : 10"
                          [resource]="anime"
                          [link]="'/anime/' +  anime.mal_id"></plast-resource-card>
   </div>
