@@ -1,12 +1,10 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'plast-about',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './about.component.html',
-  styleUrls: ['./about.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AboutComponent {}
