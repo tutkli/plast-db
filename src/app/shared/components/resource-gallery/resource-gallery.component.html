@@ -3,11 +3,11 @@
   <plast-resource-card *ngFor="let resource of resources | maxItems: maxItems"
                        class="mb-3"
                        [resource]="resource"
-                       [link]="'/' + resourceType + '/' + resource.mal_id"></plast-resource-card>
+                       [link]="'/' + resourceType + '/' + resource.mal_id"/>
 </div>
 
 <ng-template #placeholderResourcesTemplate>
   <div class="flex flex-row flex-wrap justify-around items-center">
-    <plast-resource-card *ngFor="let resource of placeHolderResources" class="mb-3"></plast-resource-card>
+    <plast-resource-card *ngFor="let resource of placeHolderResources" class="mb-3"/>
   </div>
 </ng-template>

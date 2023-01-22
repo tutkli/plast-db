@@ -10,22 +10,22 @@
        #animeScrollContainer>
     <plast-resource-card *ngFor="let anime of (topAnimes$ | async) | maxItems: 10"
                          [resource]="anime"
-                         [link]="'/anime/' +  anime.mal_id"></plast-resource-card>
+                         [link]="'/anime/' +  anime.mal_id"/>
   </div>
 
   <div class="flex flex-row justify-end items-center gap-3 text-indigo-700">
     <button (click)="scrollAnimes('left')" class="hover:opacity-80">
-      <svg-icon key="left-arrow-circle" fontSize="2rem" ></svg-icon>
+      <svg-icon key="left-arrow-circle" fontSize="2rem"/>
     </button>
     <button (click)="scrollAnimes('right')" class="hover:opacity-80">
-      <svg-icon key="right-arrow-circle" fontSize="2rem"></svg-icon>
+      <svg-icon key="right-arrow-circle" fontSize="2rem"/>
     </button>
   </div>
 
 
   <ng-template #placeholderTemplate>
     <div class="flex flex-row gap-5 overflow-hidden">
-      <plast-resource-card *ngFor="let resource of placeholderCards"></plast-resource-card>
+      <plast-resource-card *ngFor="let resource of placeholderCards"/>
     </div>
   </ng-template>
 </section>

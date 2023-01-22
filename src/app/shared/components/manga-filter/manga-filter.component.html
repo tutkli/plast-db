@@ -1,7 +1,5 @@
 <div [formGroup]="form" class="flex flex-col gap-7">
-  <plast-text-input formControlName="q" [icon]="'search'" [action]="'Search'"></plast-text-input>
-
-  <ng-content></ng-content>
-
-  <plast-paginator formControlName="page" [pagination]="pagination$ | async"></plast-paginator>
+  <plast-text-input formControlName="q" [icon]="'search'" [action]="'Search'"/>
+  <ng-content/>
+  <plast-paginator formControlName="page" [pagination]="pagination$ | async"/>
 </div>

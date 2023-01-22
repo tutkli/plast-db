@@ -10,22 +10,21 @@
        #mangaScrollContainer>
     <plast-resource-card *ngFor="let manga of (topMangas$ | async) | maxItems: 10"
                          [resource]="manga"
-                         [link]="'/manga/' +  manga.mal_id"></plast-resource-card>
+                         [link]="'/manga/' +  manga.mal_id"/>
   </div>
 
   <div class="flex flex-row justify-end items-center gap-3 text-indigo-700">
     <button (click)="scrollMangas('left')" class="hover:opacity-80">
-      <svg-icon key="left-arrow-circle" fontSize="2rem" ></svg-icon>
+      <svg-icon key="left-arrow-circle" fontSize="2rem"/>
     </button>
     <button (click)="scrollMangas('right')" class="hover:opacity-80">
-      <svg-icon key="right-arrow-circle" fontSize="2rem"></svg-icon>
+      <svg-icon key="right-arrow-circle" fontSize="2rem"/>
     </button>
   </div>
 
-
   <ng-template #placeholderTemplate>
     <div class="flex flex-row gap-5 overflow-hidden">
-      <plast-resource-card *ngFor="let resource of placeholderCards"></plast-resource-card>
+      <plast-resource-card *ngFor="let resource of placeholderCards"/>
     </div>
   </ng-template>
 </section>
