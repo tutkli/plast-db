@@ -10,8 +10,8 @@ export const ANIME_ROUTES: Routes = [
   { path: '', redirectTo: AnimeRouteName.LIST, pathMatch: 'full' },
   {
     path: AnimeRouteName.LIST,
-    loadComponent: () => import('src/app/views/anime-list/anime-list.component').then((mod) => mod.AnimeListComponent),
-    title: 'PLAST DB | List',
+    loadComponent: () => import('src/app/views/anime-list/anime-list.component'),
+    title: 'PLAST DB | Anime',
   },
   {
     path: AnimeRouteName.DETAIL,

@@ -1,28 +1,27 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { TextInputComponent } from '@shared-components/text-input/text-input.component';
-import { AnimeFilterService } from '@services/anime-filter.service';
-import { PaginatorComponent } from '@shared-components/paginator/paginator.component';
-import { JikanPagination } from '@tutkli/jikan-ts';
-import { Observable } from 'rxjs';
 import { AsyncPipe } from '@angular/common';
+import { MangaFilterService } from '@services/manga-filter.service';
+import { FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { Observable } from 'rxjs';
+import { JikanPagination } from '@tutkli/jikan-ts';
+import { TextInputComponent } from '@shared-components/text-input/text-input.component';
+import { PaginatorComponent } from '@shared-components/paginator/paginator.component';
 
 @Component({
-  selector: 'plast-anime-filter',
+  selector: 'plast-manga-filter',
   standalone: true,
   imports: [ReactiveFormsModule, TextInputComponent, PaginatorComponent, AsyncPipe],
-  templateUrl: './anime-filter.component.html',
-  styleUrls: ['./anime-filter.component.scss'],
+  templateUrl: './manga-filter.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AnimeFilterComponent {
-  private animeFilterService = inject(AnimeFilterService);
+export class MangaFilterComponent {
+  private mangaFilterService = inject(MangaFilterService);
 
   get form(): FormGroup {
-    return this.animeFilterService.form;
+    return this.mangaFilterService.form;
   }
 
   get pagination$(): Observable<JikanPagination | undefined> {
-    return this.animeFilterService.pagination$;
+    return this.mangaFilterService.pagination$;
   }
 }
