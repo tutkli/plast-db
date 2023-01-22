@@ -7,7 +7,8 @@
     "analyze-bundle": "ng build -c production --aot --build-optimizer --stats-json && webpack-bundle-analyzer ./dist/plast-db/stats.json",
     "prestart": "yarn run svg:generate",
     "prebuild": "yarn run svg:generate",
-    "svg:generate": "svg-generator"
+    "svg:generate": "svg-generator",
+    "deploy": "ng deploy --base-href=/plast-db/"
   },
   "svgGenerator": {
     "outputPath": "./src/app/svg",
