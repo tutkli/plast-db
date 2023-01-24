@@ -3,7 +3,7 @@
     <p class="font-semibold text-3xl">{{ manga.title }}</p>
     <p class="opacity-80 text-sm">{{ manga.title_japanese }}</p>
     <div class="flex flex-row flex-wrap gap-3">
-      <p *ngFor="let genre of manga.explicit_genres"
+      <p *ngFor="let genre of manga.genres"
          class="py-1 px-8 border-2 border-solid border-white text-xs sm:text-sm">{{ genre.name | uppercase }}</p>
     </div>
     <div class="flex flex-row flex-wrap gap-3">
