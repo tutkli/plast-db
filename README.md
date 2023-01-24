@@ -3,7 +3,7 @@
 This is a remake of my first ever Angular Project [Plast-Manga-DB](https://github.com/tutkli/Plast-Manga-DB).
 Browse the current most popular anime with a simple interface.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.7.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.1.
 
 ### **Check project at https://tutkli.github.io/plast-db/**
 
@@ -13,8 +13,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Dependencies
 
-- [Jikan-ts](https://github.com/tutkli/jikan-ts) Node.js wrapper of the Jikan API with built-in typings
-- [Angular Material](https://material.angular.io/) Official Angular UI component library
+- [Jikan-ts](https://github.com/tutkli/jikan-ts) Node.js wrapper of the Jikan API with built-in typings.
+- [TailwindCSS](https://github.com/tailwindlabs/tailwindcss) A utility-first CSS framework for rapid UI development.
 
 ## Available Scripts
 
