@@ -37,7 +37,7 @@
     "@angular/platform-browser-dynamic": "15.1.1",
     "@angular/router": "15.1.1",
     "@ngneat/svg-icon": "6.2.0",
-    "@tutkli/jikan-ts": "0.6.3",
+    "@tutkli/jikan-ts": "0.6.4",
     "rxjs": "7.8.0",
     "tslib": "2.4.1",
     "zone.js": "0.12.0"
