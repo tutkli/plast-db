@@ -65,11 +65,11 @@
           <div class="bg-gray-400 h-1.5 w-full"></div>
         </div>
 
-        <div class="grid gap-3 grid-cols-2 sm:grid-cols-3 lg:grid-cols-5">
+        <div class="grid gap-3 grid-cols-3 sm:grid-cols-5 lg:grid-cols-10">
           <ng-container *ngFor="let character of (mangaCharacters$ | async)">
             <div *ngIf="character.role === 'Main'" class="flex flex-col items-center">
               <img  [src]="character.character.images.webp?.image_url" [alt]="character.character.name + ' portrait'"
-                    class="w-full"
+                    class="w-full h-full object-cover"
                     width="225" height="350">
               <p class="p-2 w-full bg-black text-white font-semibold">{{ character.character.name }}</p>
             </div>
